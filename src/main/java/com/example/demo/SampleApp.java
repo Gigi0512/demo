@@ -15,7 +15,6 @@ import javafx.scene.text.Font;
 import spiellogikPackage.*;
 import spielerPackage.*;
 
-
 public class SampleApp extends Application {
     private static final TextField playerTextField = new TextField();
     private static final Button nextPlayerButton = new Button("Next Player");
@@ -93,7 +92,6 @@ public class SampleApp extends Application {
             tableView.refresh(); // TableView aktualisieren
         });
 
-
         addButton.setOnAction(e -> {
 
             // Falls der nächste spieler ein computer ist wird automatisch sein zug gemacht
@@ -128,7 +126,6 @@ public class SampleApp extends Application {
         addButton.setMaxWidth(Double.MAX_VALUE);
         errorLabel.setTextFill(Color.RED);
 
-
         TableColumn<TableEntry, Number> numberColumn = new TableColumn<>("Number");
 
         VBox.setVgrow(tableView, Priority.ALWAYS); // tabelle mitgeben das sie sich horizontal ausbreitet
@@ -139,7 +136,6 @@ public class SampleApp extends Application {
 
         return new Scene(vBox);
     }
-
 
     public static class TableEntry {
 
@@ -167,7 +163,6 @@ public class SampleApp extends Application {
         Scene congratulationsScene = new Scene(congratulationsPane, 300, 200);
 
         closeButton.setOnAction(e -> {
-            // schließen zweite scene
             ((Stage) closeButton.getScene().getWindow()).close();
         });
         return congratulationsScene;

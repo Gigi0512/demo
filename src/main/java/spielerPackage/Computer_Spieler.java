@@ -1,33 +1,27 @@
 package spielerPackage;
 import spielerPackage.algorithmusBaum.AlgBaumKnoten;
 import spiellogikPackage.Hauptspiel;
-import spielerPackage.algorithmusBaum.AlgBaum.*;
-
-import java.util.Random;
-import java.util.Stack;
-
 import static spielerPackage.algorithmusBaum.AlgBaum.*;
 
+import java.util.Random;
+
 public class Computer_Spieler extends Spieler {
-    private static Stack<Integer> aktuellerSpielStack = Hauptspiel.getStack();
-    // static wieder rausnehmen, wenn stack nicht aktualisiert wird
 
     public Computer_Spieler() {
         setName("Computer Spieler");
     }
 
-    // return 0 in case of summing up
     public static int zugMachen_1vs1() {
-        int neueZahl = 9; //Zahl, die hinzugefügt werden soll
-        if (aktuellerSpielStack.size()>2 && aktuellerSpielStack.getLast() + aktuellerSpielStack.get(aktuellerSpielStack.size()-2) >=21) {
-            neueZahl = 0; // durch Addieren gewinnen
+        int neueZahl = 9;
+        if (Hauptspiel.getAnzahlSpieler()>2 && Hauptspiel.getStack().getLast() + Hauptspiel.getStack().get(Hauptspiel.getAnzahlSpieler()-2) >=21) {
+            neueZahl = 0;
         } else {
-            switch (aktuellerSpielStack.size()) {
+            switch (Hauptspiel.getAnzahlSpieler()) {
                 case 0, 2, 4:
                     neueZahl = 1;
                     break;
                 case 1, 3, 5:
-                    while (aktuellerSpielStack.getLast() + neueZahl >=21){ // möglichst große Zahl addieren
+                    while (Hauptspiel.getStack().getLast() + neueZahl >=21){ // möglichst große Zahl addieren
                         neueZahl--;
                     }
                     break;
@@ -46,7 +40,7 @@ public class Computer_Spieler extends Spieler {
         if (aktuelleRundenanzahl <4) {
             neueZahl = (new Random()).nextInt(9) +1;
         }
-        if (aktuellerSpielStack.size()>=2 && aktuellerSpielStack.getLast() + aktuellerSpielStack.get(aktuellerSpielStack.size()-2) >=21) {
+        if (Hauptspiel.getAnzahlSpieler()>=2 && Hauptspiel.getStack().getLast() + Hauptspiel.getStack().get(Hauptspiel.getAnzahlSpieler()-2) >=21) {
             neueZahl = 0;
         } else {
             int zuege = anzahlSpieler * 2;
