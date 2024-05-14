@@ -14,10 +14,10 @@ import spiellogikPackage.Hauptspiel;
 
 import java.io.IOException;
 
-
 public class spielerAuswahlController {
 
-    private TextField name;
+    @FXML
+    private TextField nameTextField;
 
     @FXML
     private void wechselZuSpielfeld(ActionEvent event) throws IOException {
@@ -42,10 +42,8 @@ public class spielerAuswahlController {
     @FXML
     private void spielerHinzufuegen(ActionEvent event) throws IOException {
 
-            Spieler spieler = new Echter_Spieler(name.getText());
-            Hauptspiel.spielerHinzufuegen(spieler);
-
-            name.setText("");
+            //Spieler spieler = new Echter_Spieler(nameTextField.getText());
+            //Hauptspiel.spielerHinzufuegen(spieler);
+            nameTextField.clear();
     }
-
 }

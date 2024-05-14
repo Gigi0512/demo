@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="800.0" prefWidth="600.0" style="-fx-background-color: #6ed291;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo.highscoreController">
+   <children>
+      <Label alignment="CENTER" layoutX="77.0" layoutY="197.0" prefWidth="450.0" style="-fx-border-color: black; -fx-border-width: 2; -fx-background-color: white;">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER" layoutX="77.0" layoutY="241.0" prefWidth="450.0" style="-fx-border-color: black; -fx-border-width: 2; -fx-background-color: white;">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER" layoutX="77.0" layoutY="287.0" prefWidth="450.0" style="-fx-border-color: black; -fx-border-width: 2; -fx-background-color: white;">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="152.0" layoutY="31.0" text="Highscore Liste">
+         <font>
+            <Font size="45.0" />
+         </font>
+      </Label>
+      <Label layoutX="77.0" layoutY="140.0" text="Top 3">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="56.0" layoutY="199.0" text="1.">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="56.0" layoutY="243.0" text="2.">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="56.0" layoutY="289.0" text="3.">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <TextField layoutX="75.0" layoutY="486.0" prefWidth="250.0" promptText="Name eingeben" style="-fx-border-color: black; -fx-border-width: 2;">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </TextField>
+      <Label layoutX="75.0" layoutY="436.0" text="Spieler suchen">
+         <font>
+            <Font size="25.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER" layoutX="74.0" layoutY="541.0" prefWidth="450.0" style="-fx-border-color: black; -fx-border-width: 2; -fx-background-color: white;">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Button layoutX="275.0" layoutY="706.0" mnemonicParsing="false" text="zurück" />
+   </children>
+</AnchorPane>
