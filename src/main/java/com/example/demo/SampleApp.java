@@ -10,7 +10,6 @@ import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import javafx.scene.text.Text;
-import java.util.*;
 import javafx.scene.text.Font;
 
 import spiellogikPackage.*;
