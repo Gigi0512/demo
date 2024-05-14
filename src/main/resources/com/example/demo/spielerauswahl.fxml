@@ -38,5 +38,9 @@
          <Font size="30.0" />
       </font>
    </Button>
-   <Button layoutX="160.0" layoutY="583.0" mnemonicParsing="false" onAction="#wechselZuSpielfeld" text="Button" />
+   <Button layoutX="65.0" layoutY="555.0" minHeight="60.0" mnemonicParsing="false" onAction="#wechselZuSpielfeld" prefWidth="300.0" style="-fx-background-color: c8466e; -fx-border-color: black; -fx-border-width: 2;" text="Spiel starten" textFill="WHITE">
+      <font>
+         <Font size="30.0" />
+      </font>
+   </Button>
 </AnchorPane>
