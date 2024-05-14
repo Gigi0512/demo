@@ -7,7 +7,6 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.TextField;
-import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import spielerPackage.Echter_Spieler;
 import spielerPackage.Spieler;
@@ -43,10 +42,10 @@ public class spielerAuswahlController {
     @FXML
     private void spielerHinzufuegen(ActionEvent event) throws IOException {
 
-        Spieler spieler = new Echter_Spieler(name.getText());
-        Hauptspiel.spielerHinzufuegen(spieler);
+            Spieler spieler = new Echter_Spieler(name.getText());
+            Hauptspiel.spielerHinzufuegen(spieler);
 
-        name.clear();
-        System.out.println(spieler.getName());
+            name.setText("");
     }
+
 }
