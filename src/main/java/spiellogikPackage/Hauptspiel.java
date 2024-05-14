@@ -1,6 +1,5 @@
 package spiellogikPackage;
 
-import com.example.demo.SampleApp;
 import spielerPackage.*;
 
 import java.util.*;
@@ -38,7 +37,6 @@ public class Hauptspiel {
         }
 
         if (String.valueOf(pNumber).length() != 1){
-            SampleApp.error("Gebe eine Zahl von 1-9 an.");
             throw new IllegalArgumentException("Gebe eine Zahl von 1-9 an.");
         }
         if (stack.size() >= 6){
@@ -71,7 +69,7 @@ public class Hauptspiel {
 
         if (stack.peek() >= 21) {
 
-            SampleApp.gewinnerAusgeben();
+
             System.out.println("Gewinner: " + spielerListe.getFirst().toString());
             stack.removeAllElements();
         }
