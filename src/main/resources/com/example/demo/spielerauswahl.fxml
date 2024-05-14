@@ -7,18 +7,18 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="800.0" prefWidth="600.0" style="-fx-background-color: #6ed291;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo.startmenuController">
+<AnchorPane prefHeight="800.0" prefWidth="600.0" style="-fx-background-color: #6ed291;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo.spielerAuswahlController">
     <Label alignment="CENTER" contentDisplay="CENTER" layoutX="110.0" layoutY="120.0" text="Spielerauswahl" textFill="WHITE">
         <font>
             <Font size="60.0" />
         </font>
     </Label>
-    <Button layoutX="65.0" layoutY="485.0" minHeight="60.0" mnemonicParsing="false" prefWidth="300.0" style="-fx-background-color: c8466e; -fx-border-color: black; -fx-border-width: 2;" text="Spieler hinzufügen" textFill="WHITE">
+    <Button layoutX="65.0" layoutY="485.0" minHeight="60.0" mnemonicParsing="false" onAction="#spielerHinzufuegen" prefWidth="300.0" style="-fx-background-color: c8466e; -fx-border-color: black; -fx-border-width: 2;" text="Spieler hinzufügen" textFill="WHITE">
         <font>
             <Font size="30.0" />
         </font>
     </Button>
-    <TextField layoutX="65.0" layoutY="355.0" prefHeight="60.0" prefWidth="300.0" promptText="Name eingeben..." style="-fx-background-color: c8466e; -fx-border-width: 2; -fx-border-color: black;">
+    <TextField id="name" layoutX="65.0" layoutY="355.0" prefHeight="60.0" prefWidth="300.0" promptText="Name eingeben..." style="-fx-background-color: c8466e; -fx-border-width: 2; -fx-border-color: black;">
         <font>
           <Font size="30.0" />
         </font>
@@ -38,4 +38,5 @@
          <Font size="30.0" />
       </font>
    </Button>
+   <Button layoutX="160.0" layoutY="583.0" mnemonicParsing="false" onAction="#wechselZuSpielfeld" text="Button" />
 </AnchorPane>
