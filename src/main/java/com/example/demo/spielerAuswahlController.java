@@ -58,6 +58,7 @@ public class spielerAuswahlController {
                 error.setText("Der Name ist ungültig.");
                 return;
             }
+            error.setVisible(false);
 
             if (computerCheck.isSelected()) {
                 Spieler computerSpieler = new Computer_Spieler();
@@ -72,7 +73,7 @@ public class spielerAuswahlController {
             }
 
             if (Hauptspiel.getAnzahlSpieler() >= 2) {
-                spielStarten.setVisible(true);
+                spielStarten.setDisable(false);
             }
     }
 }
