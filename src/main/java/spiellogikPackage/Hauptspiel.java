@@ -36,7 +36,6 @@ public class Hauptspiel {
             throw new IllegalArgumentException();
         }
 
-
         stack.push(pNumber);
         spielerListe.addFirst(spielerListe.removeLast());
         rundenAnzahl ++;
@@ -68,10 +67,6 @@ public class Hauptspiel {
     }
     public static void setPlayerWon(boolean playerWon) {
         Hauptspiel.playerWon = playerWon;
-    }
-
-    public static void setSpielerListe(LinkedList<Spieler> spielerListe) {
-        spielerListe = spielerListe;
     }
 
     @Override
