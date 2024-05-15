@@ -67,6 +67,7 @@ public class spielerAuswahlController {
     private void wechselZuSpielfeld(ActionEvent event) throws IOException, InterruptedException {
         Hauptspiel.spielStarten();
 
+
         FXMLLoader loader = new FXMLLoader(getClass().getResource("spielfeld.fxml"));
         Parent root = loader.load();
         Scene scene = new Scene(root);
@@ -78,7 +79,7 @@ public class spielerAuswahlController {
         stage.show();
 
         if (Hauptspiel.spielerAmZug() instanceof Computer_Spieler) {
-            Thread.sleep(3000);
+            Thread.sleep(1000);
             controller.spielStartVorbereiten();
         }
 
