@@ -60,7 +60,7 @@ public class spielerAuswahlController {
     @FXML
     private void spielerHinzufuegen(ActionEvent event) throws IOException {
 
-            if (nameTextField.getText().isEmpty() || nameTextField.getText().length() > 15  || checkDuplikate.contains(nameTextField.getText())){
+            if (nameTextField.getText().isEmpty() || nameTextField.getText().length() > 15 || checkDuplikate.contains(nameTextField.getText()) || nameTextField.getText().contains(";")){
                 error.setVisible(true);
                 error.setText("Der Name ist ungültig.");
                 return;

@@ -1,5 +1,6 @@
 package com.example.demo;
 
+import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -33,5 +34,10 @@ public class startmenuController {
         controller.startHST();
         stage.setResizable(false);
         stage.show();
+    }
+
+    @FXML
+    private void exit(ActionEvent event) throws IOException {
+        Platform.exit();
     }
 }
