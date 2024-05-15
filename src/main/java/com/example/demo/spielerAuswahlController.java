@@ -96,8 +96,7 @@ public class spielerAuswahlController {
             checkDuplikate.add(nameTextField.getText().toLowerCase());
 
             if (computerCheck.isSelected()) {
-                Spieler computerSpieler = new Computer_Spieler();
-                computerSpieler.setName(nameTextField.getText());
+                Spieler computerSpieler = new Computer_Spieler(nameTextField.getText());
                 Hauptspiel.spielerHinzufuegen(computerSpieler);
                 nameTextField.clear();
                 computerCheck.setSelected(false);
@@ -128,8 +127,7 @@ public class spielerAuswahlController {
             checkDuplikate.add(nameTextField.getText());
 
             if (computerCheck.isSelected()) {
-                Spieler computerSpieler = new Computer_Spieler();
-                computerSpieler.setName(nameTextField.getText());
+                Spieler computerSpieler = new Computer_Spieler(nameTextField.getText());
                 Hauptspiel.spielerHinzufuegen(computerSpieler);
                 nameTextField.clear();
             }

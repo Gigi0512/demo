@@ -35,8 +35,7 @@ public class HSTabelle {
                 }
                 else if (fields[0] != spieler1){
                     myWriter.write(line);
-                }
-                myWriter.newLine();
+                }myWriter.newLine();
             }
             myWriter.close();
             myReader.close();
@@ -96,9 +95,7 @@ public class HSTabelle {
     public static void addPlayer(String spieler1) {
         try {
             BufferedWriter meinWriter = Files.newBufferedWriter(meineHST, StandardOpenOption.APPEND);
-
-            meinWriter.newLine();
-            meinWriter.write("\n" + spieler1.toLowerCase() + ";0;0;0;0");
+            meinWriter.write(spieler1.toLowerCase() + ";0;0;0;0");
             meinWriter.close();
 
         } catch (IOException e) {
