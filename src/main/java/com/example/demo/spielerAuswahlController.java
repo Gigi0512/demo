@@ -41,7 +41,7 @@ public class spielerAuswahlController {
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         stage.setScene(scene);
         spielfeldController controller = loader.getController();
-        controller.spielerAmZugAnzeigen();
+        controller.spielStartVorbereiten();
         stage.show();
     }
 
