@@ -10,7 +10,7 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 import java.io.IOException;
 
-public class startmenuController {
+public class StartmenuController {
 
     @FXML
     private void wechselZuHilfe(ActionEvent event) throws IOException {
@@ -40,7 +40,7 @@ public class startmenuController {
         Scene scene = new Scene(root);
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         stage.setScene(scene);
-        highscoreController controller = loader.getController();
+        HighscoreController controller = loader.getController();
         controller.startHST();
         stage.setResizable(false);
         stage.show();

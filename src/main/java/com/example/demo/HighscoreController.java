@@ -15,7 +15,7 @@ import highscoreTabelle.HSTabelle;
 import java.io.IOException;
 
 
-public class highscoreController {
+public class HighscoreController {
 
     @FXML
     private TextField spielerSuchenTF;

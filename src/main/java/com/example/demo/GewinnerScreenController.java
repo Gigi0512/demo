@@ -18,7 +18,7 @@ import java.io.IOException;
 
 import spielerPackage.*;
 
-public class gewinnerScreenController {
+public class GewinnerScreenController {
 
     @FXML
     private Label gewinnerLabel;
@@ -56,7 +56,7 @@ public class gewinnerScreenController {
         Scene scene = new Scene(root);
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         stage.setScene(scene);
-        highscoreController controller = loader.getController();
+        HighscoreController controller = loader.getController();
         controller.startHST();
         stage.setResizable(false);
         stage.show();
@@ -73,7 +73,7 @@ public class gewinnerScreenController {
         Scene scene = new Scene(root);
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         stage.setScene(scene);
-        spielfeldController controller = loader.getController();
+        SpielfeldController controller = loader.getController();
         controller.spielStartVorbereiten();
         stage.setResizable(false);
         stage.show();

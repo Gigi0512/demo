@@ -19,7 +19,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 
-public class spielfeldController {
+public class SpielfeldController {
 
     @FXML
     private TextField eingabe;
@@ -49,7 +49,7 @@ public class spielfeldController {
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         stage.setScene(scene);
 
-        gewinnerScreenController controller = loader.getController();
+        GewinnerScreenController controller = loader.getController();
         controller.gewinnerAusgabe();
         stage.setResizable(false);
         stage.show();

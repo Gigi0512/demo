@@ -10,7 +10,7 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class hilfeController {
+public class HilfeController {
 
     @FXML
     public void wechselZuStartmenu(ActionEvent event) throws IOException {

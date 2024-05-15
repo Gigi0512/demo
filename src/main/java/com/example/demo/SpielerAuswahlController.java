@@ -19,11 +19,10 @@ import spielerPackage.Echter_Spieler;
 import spielerPackage.Spieler;
 import spiellogikPackage.Hauptspiel;
 
-import javax.swing.text.html.ImageView;
 import java.io.IOException;
 import java.util.ArrayList;
 
-public class spielerAuswahlController {
+public class SpielerAuswahlController {
 
     ArrayList<String> checkDuplikate = new ArrayList<>();
     @FXML
@@ -61,7 +60,7 @@ public class spielerAuswahlController {
         Scene scene = new Scene(root);
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         stage.setScene(scene);
-        spielfeldController controller = loader.getController();
+        SpielfeldController controller = loader.getController();
         controller.spielStartVorbereiten();
         stage.setResizable(false);
         stage.show();
