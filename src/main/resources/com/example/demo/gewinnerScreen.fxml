@@ -12,7 +12,7 @@
             <Font size="50.0" />
          </font>
       </Label>
-      <Label fx:id="gewinnerLabel" alignment="CENTER" layoutX="97.0" layoutY="178.0" prefHeight="88.0" prefWidth="406.0" textFill="WHITE">
+      <Label fx:id="gewinnerLabel" alignment="CENTER" layoutX="97.0" layoutY="178.0" prefHeight="88.0" prefWidth="406.0" text="name" textFill="WHITE">
          <font>
             <Font size="50.0" />
          </font>

@@ -40,15 +40,16 @@ public class spielfeldController {
     @FXML
     public void wechselZuGewinnerScreen(ActionEvent event) throws IOException {
 
-        gewinnerScreenController controller = new gewinnerScreenController();
-        controller.gewinnerAusgabe();
-
         FXMLLoader loader = new FXMLLoader(getClass().getResource("gewinnerScreen.fxml"));
         Parent root = loader.load();
         Scene scene = new Scene(root);
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         stage.setScene(scene);
         stage.setResizable(false);
+
+        gewinnerScreenController controller = new gewinnerScreenController();
+        controller.gewinnerAusgabe();
+
         stage.show();
     }
 

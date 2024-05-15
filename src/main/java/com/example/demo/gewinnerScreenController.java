@@ -18,7 +18,7 @@ public class gewinnerScreenController {
     private Label gewinnerLabel;
 
     public void gewinnerAusgabe(){
-        gewinnerLabel.setText(Hauptspiel.getSpielerListe().get(Hauptspiel.getAnzahlSpieler()).getName());
+        gewinnerLabel.setText(Hauptspiel.getSpielerListe().getLast().getName());
     }
 
     @FXML
