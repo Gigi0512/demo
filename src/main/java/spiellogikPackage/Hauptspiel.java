@@ -23,8 +23,6 @@ public class Hauptspiel {
         return stack;
     }
 
-
-
     public static int getAnzahlSpieler() {
         return spielerListe.size();
     }
