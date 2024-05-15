@@ -8,11 +8,15 @@ public class AlgBaumKnoten {
     private Stack<Integer> stackVonDiesemKnoten;
     private Set<AlgBaumKnoten> kinder = new HashSet<>();
     private double gewinnWahrscheinlichkeit = -1;
-    public int zugWert;//gibt an, was Spieler in seinem Zug angegeben hat, also entweder eine Zahl zwischen 1 und 9 oder +
+    private int zugWert; // repräsentiert den Zug, der zu dem auf diesem Knoten gespeicherten Spielstand führt (0 = Addieren)
 
     public AlgBaumKnoten(Stack<Integer> stack, int zugWert) {
         this.stackVonDiesemKnoten = stack;
         this.zugWert = zugWert;
+    }
+
+    public int getZugWert() {
+        return zugWert;
     }
 
     public Set<AlgBaumKnoten> getKinder() {

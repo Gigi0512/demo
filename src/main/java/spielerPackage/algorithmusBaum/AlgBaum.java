@@ -77,7 +77,7 @@ public class AlgBaum {
         for (AlgBaumKnoten kind : wurzel.getKinder()) {
             if (kind.getGewinnWahrscheinlichkeit() > hoechsteGewinnWahrscheinlichkeit) {
                 hoechsteGewinnWahrscheinlichkeit = kind.getGewinnWahrscheinlichkeit();
-                besterZug = kind.zugWert;
+                besterZug = kind.getZugWert();
             }
         }
         return besterZug;
