@@ -48,7 +48,7 @@
             <Font size="20.0" />
          </font>
       </Label>
-      <TextField fx:id="spielerSuchenTF" layoutX="75.0" layoutY="486.0" prefWidth="250.0" promptText="Name eingeben" style="-fx-border-color: black; -fx-border-width: 2;">
+      <TextField fx:id="spielerSuchenTF" layoutX="75.0" layoutY="486.0" onKeyPressed="#nachSpielerSuchen" prefWidth="250.0" promptText="Name eingeben" style="-fx-border-color: black; -fx-border-width: 2;">
          <font>
             <Font size="15.0" />
          </font>
@@ -58,11 +58,16 @@
             <Font size="25.0" />
          </font>
       </Label>
-      <Label fx:id="gesuchterSpielerID" alignment="CENTER" layoutX="74.0" layoutY="541.0" prefWidth="450.0" style="-fx-border-color: black; -fx-border-width: 2; -fx-background-color: white;">
+      <Label fx:id="gesuchterSpielerID" alignment="CENTER" layoutX="74.0" layoutY="541.0" prefHeight="30.0" prefWidth="490.0" style="-fx-border-color: black; -fx-border-width: 2; -fx-background-color: white;">
          <font>
-            <Font size="20.0" />
+            <Font size="10.0" />
          </font>
       </Label>
       <Button fx:id="zurückBT" layoutX="275.0" layoutY="706.0" mnemonicParsing="false" onAction="#wechselZuStartmenu" text="zurück" />
+      <Button layoutX="342.0" layoutY="486.0" mnemonicParsing="false" onAction="#onSuchenKlick" style="-fx-border-color: black; -fx-border-width: 2; -fx-background-color: #c8466e;" text="suchen ">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Button>
    </children>
 </AnchorPane>
