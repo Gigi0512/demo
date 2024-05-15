@@ -6,25 +6,28 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="800.0" prefWidth="600.0" style="-fx-background-color: #6ed291;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo.startmenuController">
+<AnchorPane prefHeight="800.0" prefWidth="600.0" style="-fx-background-color: #6ed291;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo.gewinnerscreenController">
     <children>
         <Label alignment="CENTER" contentDisplay="CENTER" layoutX="133.0" layoutY="52.0" text="Der Sieger ist" textFill="WHITE">
             <font>
                 <Font size="60.0" />
             </font>
         </Label>
-        <Button layoutX="150.0" layoutY="410.0" minHeight="80.0" mnemonicParsing="false" prefWidth="300.0" style="-fx-background-color: c8466e; -fx-border-color: black; -fx-border-width: 2;" text="Erneut Spielen" textFill="WHITE">
+        <Button layoutX="150.0" layoutY="410.0" minHeight="80.0" mnemonicParsing="false" onAction="#wechselZuspielfeld" prefWidth="300.0" style="-fx-background-color: c8466e; -fx-border-color: black; -fx-border-width: 2;" text="Erneut Spielen" textFill="WHITE">
             <font>
                 <Font size="35.0" />
             </font>
         </Button>
-        <Button layoutX="150.0" layoutY="522.0" minHeight="80.0" mnemonicParsing="false" prefWidth="300.0" style="-fx-background-color: c8466e; -fx-border-color: black; -fx-border-width: 2;" text="Highscore Liste" textFill="WHITE">
+        <Button layoutX="150.0" layoutY="522.0" minHeight="80.0" mnemonicParsing="false" onAction="#wechselZuHighscoretabelle" prefWidth="300.0" style="-fx-background-color: c8466e; -fx-border-color: black; -fx-border-width: 2;" text="Highscore Liste" textFill="WHITE">
             <font>
                 <Font size="35.0" />
             </font>
         </Button>
-      <TextField layoutX="150.0" layoutY="146.0" prefHeight="80.0" prefWidth="300.0" style="-fx-background-color: 3caa73;" />
-      <Button alignment="CENTER" contentDisplay="CENTER" layoutX="150.0" layoutY="630.0" minHeight="80.0" mnemonicParsing="false" prefWidth="300.0" style="-fx-background-color: c8466e; -fx-border-color: black; -fx-border-width: 2;" text="Hauptmenü" textFill="WHITE">
+      <TextField layoutX="150.0" layoutY="146.0" prefHeight="80.0" prefWidth="300.0" style="-fx-background-color: 3caa73;">
+         <font>
+            <Font size="35.0" />
+         </font></TextField>
+      <Button alignment="CENTER" contentDisplay="CENTER" layoutX="150.0" layoutY="630.0" minHeight="80.0" mnemonicParsing="false" onAction="#wechselstartmenu" prefWidth="300.0" style="-fx-background-color: c8466e; -fx-border-color: black; -fx-border-width: 2;" text="Hauptmenü" textFill="WHITE">
          <font>
             <Font size="35.0" />
          </font>
