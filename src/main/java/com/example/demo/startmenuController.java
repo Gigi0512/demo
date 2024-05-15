@@ -23,7 +23,6 @@ public class startmenuController {
         stage.show();
     }
 
-    // start knopf:
     @FXML
     private void wechselZuSpielerauswahl(ActionEvent event) throws IOException {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("spielerauswahl.fxml"));
