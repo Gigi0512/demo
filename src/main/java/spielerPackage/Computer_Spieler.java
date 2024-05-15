@@ -8,7 +8,7 @@ import java.util.Random;
 public class Computer_Spieler extends Spieler {
 
     public Computer_Spieler(String name) {
-        this.setName(name);
+        this.setName(name + "(Computer)");
     }
 
     public static int zugMachen_1vs1() {
