@@ -12,6 +12,17 @@ import java.io.IOException;
 
 public class startmenuController {
 
+    @FXML
+    private void wechselZuHilfe(ActionEvent event) throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("hilfe.fxml"));
+        Parent root = loader.load();
+        Scene scene = new Scene(root);
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        stage.setScene(scene);
+        stage.setResizable(false);
+        stage.show();
+    }
+
     // start knopf:
     @FXML
     private void wechselZuSpielerauswahl(ActionEvent event) throws IOException {

@@ -26,7 +26,7 @@
          <Font size="35.0" />
       </font>
    </Button>
-   <Button id="hilfe" layoutX="153.0" layoutY="521.0" minHeight="80.0" mnemonicParsing="false" prefWidth="300.0" style="-fx-background-color: c8466e; -fx-border-color: black; -fx-border-width: 2;" text="Hilfe" textFill="WHITE">
+   <Button id="hilfe" layoutX="153.0" layoutY="521.0" minHeight="80.0" mnemonicParsing="false" onAction="#wechselZuHilfe" prefWidth="300.0" style="-fx-background-color: c8466e; -fx-border-color: black; -fx-border-width: 2;" text="Hilfe" textFill="WHITE">
       <font>
          <Font size="35.0" />
       </font>

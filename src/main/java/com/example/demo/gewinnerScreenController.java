@@ -6,16 +6,24 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Label;
 import javafx.stage.Stage;
+import spiellogikPackage.Hauptspiel;
 
 import java.io.IOException;
 
-public class gewinnerscreenController {
+public class gewinnerScreenController {
 
-    // start knopf:
     @FXML
-    private void wechselZuspielfeld(ActionEvent event) throws IOException {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("spielfeld.fxml"));
+    private Label gewinnerLabel;
+
+    public void gewinnerAusgabe(){
+        gewinnerLabel.setText(Hauptspiel.getSpielerListe().getLast().getName());
+    }
+
+    @FXML
+    private void wechselZuStartmenu(ActionEvent event) throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("startmenu.fxml"));
         Parent root = loader.load();
         Scene scene = new Scene(root);
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
@@ -38,12 +46,16 @@ public class gewinnerscreenController {
     }
 
     @FXML
-    private void wechselstartmenu(ActionEvent event) throws IOException {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("startmenu.fxml"));
+    private void wechselZuSpielfeld(ActionEvent event) throws IOException, InterruptedException {
+        Hauptspiel.spielStarten();
+
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("spielfeld.fxml"));
         Parent root = loader.load();
         Scene scene = new Scene(root);
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         stage.setScene(scene);
+        spielfeldController controller = loader.getController();
+        controller.spielStartVorbereiten();
         stage.setResizable(false);
         stage.show();
     }

@@ -5,6 +5,7 @@ import java.util.*;
 
 public class Hauptspiel {
 
+    private static boolean playerWon;
     private static LinkedList<Spieler> spielerListe = new LinkedList<Spieler>();
     private static Stack<Integer> stack = new Stack<Integer>();
     private static int rundenAnzahl = 1;
@@ -14,8 +15,6 @@ public class Hauptspiel {
     }
 
     public static void spielStarten(){
-        Random rand = new Random();
-        int start = rand.nextInt(getAnzahlSpieler());
         Collections.shuffle(spielerListe);
     }
     public static Stack<Integer> getStack() {
@@ -28,7 +27,7 @@ public class Hauptspiel {
 
     public static void addNumber(int pNumber){
 
-        if (pNumber == 0 || spielerListe.peek() instanceof Computer_Spieler) {
+        if (pNumber == 0) {
             summingUp();
             return;
         }
@@ -64,8 +63,7 @@ public class Hauptspiel {
         rundenAnzahl ++;
 
         if (stack.peek() >= 21) {
-            System.out.println("Gewinner: " + spielerListe.getFirst().toString());
-            stack.removeAllElements();
+            playerWon = true;
         }
     }
 
@@ -74,6 +72,15 @@ public class Hauptspiel {
     }
     public static Spieler spielerAmZug(){
         return spielerListe.peek();
+    }
+    public static boolean getPlayerWon() {
+        return playerWon;
+    }
+    public static void setPlayerWon(boolean playerWon) {
+        Hauptspiel.playerWon = playerWon;
+    }
+    public static void resetSpielerListe(){
+        Hauptspiel.spielerListe.clear();
     }
 
     @Override

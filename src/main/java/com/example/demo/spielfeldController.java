@@ -2,11 +2,17 @@ package com.example.demo;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.stage.Stage;
 import spiellogikPackage.Hauptspiel;
 import spielerPackage.*;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 
@@ -31,12 +37,32 @@ public class spielfeldController {
     @FXML
     private Label sechs;
 
-    public void spielStartVorbereiten(){
+    @FXML
+    public void wechselZuGewinnerScreen(ActionEvent event) throws IOException {
+
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("gewinnerScreen.fxml"));
+        Parent root = loader.load();
+        Scene scene = new Scene(root);
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        stage.setScene(scene);
+        stage.setResizable(false);
+
+        gewinnerScreenController controller = new gewinnerScreenController();
+        controller.gewinnerAusgabe();
+
+        stage.show();
+    }
+
+
+    public void spielStartVorbereiten() throws InterruptedException {
         spielerAmZug.setText(Hauptspiel.spielerAmZug().getName());
+        if (Hauptspiel.spielerAmZug() instanceof Computer_Spieler){
+            //computerZugAusfuehren();
+        }
     }
 
     @FXML
-    public void spielfeldAktualisieren() {
+    public void spielfeldAktualisieren() throws InterruptedException {
         ArrayList<Label> felder = new ArrayList<>(Arrays.asList(eins, zwei, drei, vier, fuenf, sechs));
         for (int i = 0; i < 6; i++) {
             if (i < Hauptspiel.getStack().size()){
@@ -49,7 +75,7 @@ public class spielfeldController {
         System.out.println(Hauptspiel.getSpielerListe().getFirst().getName());
     }
 
-    public void eingabeAusfuehrenAdd() {
+    public void eingabeAusfuehrenAdd() throws InterruptedException {
 
         if (eingabe.getText().isEmpty() || String.valueOf(Integer.parseInt(eingabe.getText())).length() != 1 || eingabe.getText().equals("0")){
             error.setVisible(true);
@@ -61,7 +87,7 @@ public class spielfeldController {
         spielfeldAktualisieren();
     }
 
-    public void eingabeAusfuehrungSum() {
+    public void eingabeAusfuehrungSum(ActionEvent event) throws InterruptedException, IOException {
 
         if (Hauptspiel.getStack().size() < 2 || Hauptspiel.getRundenAnzahl() < 4){
             error.setVisible(true);
@@ -71,14 +97,32 @@ public class spielfeldController {
         error.setVisible(false);
         Hauptspiel.summingUp();
         spielfeldAktualisieren();
+
+        if (Hauptspiel.getPlayerWon()){
+            Hauptspiel.setPlayerWon(false);
+            wechselZuGewinnerScreen(event);
+        }
+
+        if (Hauptspiel.spielerAmZug() instanceof Computer_Spieler){
+            computerZugAusfuehren(event);
+        }
     }
 
-    public void computerZugAusfuehren() throws InterruptedException {
-        if (Hauptspiel.getAnzahlSpieler() > 2){}
+    public void computerZugAusfuehren(ActionEvent event) throws InterruptedException, IOException {
+        //wait(50);
+        if (Hauptspiel.getAnzahlSpieler() > 2) {
+            Hauptspiel.addNumber(Computer_Spieler.zugMachen_Multiplayer());
+        }
+        else {
+            Hauptspiel.addNumber(Computer_Spieler.zugMachen_1vs1());
+        }
+        error.setVisible(false);
+        spielfeldAktualisieren();
 
-
-
-        wait(300);
+        if (Hauptspiel.getPlayerWon()){
+            Hauptspiel.setPlayerWon(false);
+            wechselZuGewinnerScreen(event);
+        }
     }
 }
 
