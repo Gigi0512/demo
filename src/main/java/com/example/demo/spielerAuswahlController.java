@@ -35,6 +35,17 @@ public class spielerAuswahlController {
     private Button spielStarten;
 
     @FXML
+    public void wechselZuStartmenu(ActionEvent event) throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("startmenu.fxml"));
+        Parent root = loader.load();
+        Scene scene = new Scene(root);
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        stage.setScene(scene);
+        stage.setResizable(false);
+        stage.show();
+    }
+
+    @FXML
     private void wechselZuSpielfeldklick(ActionEvent event) throws IOException, InterruptedException {
         wechselZuSpielfeld(event);
     }
@@ -73,16 +84,6 @@ public class spielerAuswahlController {
 
     }
 
-    @FXML
-    public void wechselZuStartmenu(ActionEvent event) throws IOException {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("startmenu.fxml"));
-        Parent root = loader.load();
-        Scene scene = new Scene(root);
-        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        stage.setScene(scene);
-        stage.setResizable(false);
-        stage.show();
-    }
 
     @FXML
     private void spielerHinzufuegenklick(ActionEvent event) throws IOException, InterruptedException {
