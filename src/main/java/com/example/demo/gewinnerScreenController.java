@@ -14,6 +14,8 @@ import spielerPackage.Echter_Spieler;
 import spiellogikPackage.Hauptspiel;
 
 import java.io.IOException;
+import java.util.LinkedList;
+import spielerPackage.*;
 
 public class gewinnerScreenController {
 
@@ -74,6 +76,8 @@ public class gewinnerScreenController {
 
     private void highscoreTabelleBefuellen(){
 
+        LinkedList<Spieler> temp = Hauptspiel.getSpielerListe();
+
         if (Hauptspiel.getSpielerListe().get(1) instanceof Echter_Spieler) {
             HSTabelle.addWin(Hauptspiel.getSpielerListe().get(1).getName());
             Hauptspiel.getSpielerListe().remove(1);
@@ -88,6 +92,7 @@ public class gewinnerScreenController {
         for (int i = 0; i < Hauptspiel.getAnzahlSpieler(); i++){
             HSTabelle.addLose(Hauptspiel.getSpielerListe().get(i).getName());
         }
+        Hauptspiel.setSpielerListe(temp);
     }
 
 

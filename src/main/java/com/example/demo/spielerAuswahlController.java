@@ -65,6 +65,12 @@ public class spielerAuswahlController {
         controller.spielStartVorbereiten();
         stage.setResizable(false);
         stage.show();
+
+        if (Hauptspiel.spielerAmZug() instanceof Computer_Spieler) {
+            Thread.sleep(3000);
+            controller.spielStartVorbereiten();
+        }
+
     }
 
     @FXML
@@ -94,6 +100,7 @@ public class spielerAuswahlController {
                 computerSpieler.setName(nameTextField.getText());
                 Hauptspiel.spielerHinzufuegen(computerSpieler);
                 nameTextField.clear();
+                computerCheck.setSelected(false);
             }
             else {
                 Spieler spieler = new Echter_Spieler(nameTextField.getText().toLowerCase());
