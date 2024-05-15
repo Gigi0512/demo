@@ -164,7 +164,7 @@ public class spielfeldController {
     }
 
     public void computerZugAusfuehren(KeyEvent event) throws InterruptedException, IOException {
-
+        Thread.sleep(5000);
         if (Hauptspiel.getAnzahlSpieler() > 2) {
             Hauptspiel.addNumber(Computer_Spieler.zugMachen_Multiplayer());
         }
