@@ -68,10 +68,6 @@ public class Hauptspiel {
         Hauptspiel.playerWon = playerWon;
     }
 
-    public static void setSpielerListe(LinkedList<Spieler> spielerListe) {
-        spielerListe = spielerListe;
-    }
-
     @Override
     public String toString(){
         return String.valueOf(stack);

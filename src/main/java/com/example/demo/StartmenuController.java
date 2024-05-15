@@ -22,7 +22,6 @@ public class StartmenuController {
         stage.setResizable(false);
         stage.show();
     }
-
     @FXML
     private void wechselZuSpielerauswahl(ActionEvent event) throws IOException {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("spielerauswahl.fxml"));

@@ -1,7 +1,5 @@
 package highscoreTabelle;
 
-import spielerPackage.Spieler;
-
 import java.io.*;
 import java.nio.file.*;
 import java.util.List;
@@ -45,7 +43,6 @@ public class HSTabelle {
                 addPlayer(spieler1);
                 addWin(spieler1);
             }
-
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -193,7 +190,6 @@ public class HSTabelle {
         }
         return null;
     }
-
 
     private static boolean isNumeric(String str) {
         try {

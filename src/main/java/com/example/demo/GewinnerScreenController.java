@@ -1,6 +1,5 @@
 package com.example.demo;
 
-import highscoreTabelle.HSTabelle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -13,10 +12,8 @@ import spielerPackage.Echter_Spieler;
 import spiellogikPackage.Hauptspiel;
 import java.io.IOException;
 
-
-
-
 import spielerPackage.*;
+import highscoreTabelle.HSTabelle;
 
 public class GewinnerScreenController {
 

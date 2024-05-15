@@ -11,9 +11,9 @@ import javafx.scene.control.TextField;
 import javafx.scene.input.KeyCode;
 import javafx.stage.Stage;
 import javafx.scene.input.KeyEvent;
-import highscoreTabelle.HSTabelle;
 import java.io.IOException;
 
+import highscoreTabelle.HSTabelle;
 
 public class HighscoreController {
 
@@ -27,7 +27,6 @@ public class HighscoreController {
     private Label dritteSpielerID;
     @FXML
     private Label gesuchterSpielerID;
-
 
     @FXML
     private void wechselZuStartmenu(ActionEvent event) throws IOException {

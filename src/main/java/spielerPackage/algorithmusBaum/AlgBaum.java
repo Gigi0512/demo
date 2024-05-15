@@ -1,12 +1,11 @@
 package spielerPackage.algorithmusBaum;
 
-import spiellogikPackage.Hauptspiel;
-
 import java.util.Stack;
+
+import spiellogikPackage.Hauptspiel;
 
 // Algorithmus ab dem 4. Spielzug bei 3 oder mehr Spielern
 public class AlgBaum {
-
 
     public static AlgBaumKnoten baumErstellen(int aktuelleRundenanzahl, int zuege) {
         AlgBaumKnoten wurzel = new AlgBaumKnoten(Hauptspiel.getStack(), 0);
