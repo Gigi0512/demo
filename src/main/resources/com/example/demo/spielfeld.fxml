@@ -62,7 +62,7 @@
          <Font size="45.0" />
       </font>
    </Label>
-   <Label fx:id="fünf" alignment="CENTER" layoutX="255.0" layoutY="320.0" prefHeight="90.0" prefWidth="90.0" style="-fx-background-color: c896e6; -fx-border-color: black; -fx-border-width: 2;">
+   <Label fx:id="fuenf" alignment="CENTER" layoutX="255.0" layoutY="320.0" prefHeight="90.0" prefWidth="90.0" style="-fx-background-color: c896e6; -fx-border-color: black; -fx-border-width: 2;">
       <font>
          <Font size="45.0" />
       </font>

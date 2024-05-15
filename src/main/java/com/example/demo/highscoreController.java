@@ -16,6 +16,8 @@ import javafx.scene.input.KeyEvent;
 import highscoreTabelle.HSTabelle;
 
 import java.io.IOException;
+import java.util.Locale;
+
 import com.example.demo.*;
 
 public class highscoreController {
