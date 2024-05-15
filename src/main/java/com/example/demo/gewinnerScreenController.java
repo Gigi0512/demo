@@ -88,4 +88,5 @@ public class gewinnerScreenController {
                 .filter(spieler -> spieler != zweiterSpieler)
                 .map(Spieler::getName)
                 .forEach(HSTabelle::addLose);
-    }}
+    }
+}
