@@ -9,14 +9,12 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.stage.Stage;
-import spielerPackage.Computer_Spieler;
 import spielerPackage.Echter_Spieler;
 import spiellogikPackage.Hauptspiel;
-
 import java.io.IOException;
-import java.util.LinkedList;
-import java.util.Optional;
-import java.util.stream.Collectors;
+
+
+
 
 import spielerPackage.*;
 
@@ -62,7 +60,7 @@ public class gewinnerScreenController {
     }
 
     @FXML
-    private void wechselZuSpielfeld(ActionEvent event) throws IOException, InterruptedException {
+    private void wechselZuSpielfeld(ActionEvent event) throws IOException {
         highscoreTabelleBefuellen();
         Hauptspiel.getStack().clear();
         Hauptspiel.spielStarten();
@@ -88,7 +86,7 @@ public class gewinnerScreenController {
                 .filter(spieler -> spieler instanceof Echter_Spieler)
                 .filter(spieler -> spieler != zweiterSpieler)
                 .map(Spieler::getName)
-                .collect(Collectors.toList())
+                .toList()
                 .forEach(HSTabelle::addLose);
     }
 }

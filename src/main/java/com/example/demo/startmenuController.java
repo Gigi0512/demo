@@ -47,7 +47,7 @@ public class startmenuController {
     }
 
     @FXML
-    private void exit(ActionEvent event) throws IOException {
+    private void exit(){
         Platform.exit();
     }
 }
