@@ -65,8 +65,6 @@ public class Hauptspiel {
         rundenAnzahl ++;
 
         if (stack.peek() >= 21) {
-
-
             System.out.println("Gewinner: " + spielerListe.getFirst().toString());
             stack.removeAllElements();
         }
