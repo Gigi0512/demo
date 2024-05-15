@@ -2,7 +2,6 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
@@ -23,14 +22,15 @@
                 <Font size="35.0" />
             </font>
         </Button>
-      <TextField layoutX="150.0" layoutY="146.0" prefHeight="80.0" prefWidth="300.0" style="-fx-background-color: 3caa73;">
-         <font>
-            <Font size="35.0" />
-         </font></TextField>
       <Button alignment="CENTER" contentDisplay="CENTER" layoutX="150.0" layoutY="630.0" minHeight="80.0" mnemonicParsing="false" onAction="#wechselstartmenu" prefWidth="300.0" style="-fx-background-color: c8466e; -fx-border-color: black; -fx-border-width: 2;" text="Hauptmenü" textFill="WHITE">
          <font>
             <Font size="35.0" />
          </font>
       </Button>
+      <Label fx:id="gewinnerName" alignment="CENTER" contentDisplay="CENTER" layoutX="133.0" layoutY="208.0" prefHeight="73.0" prefWidth="334.0" textFill="WHITE">
+         <font>
+            <Font size="60.0" />
+         </font>
+      </Label>
     </children>
 </AnchorPane>

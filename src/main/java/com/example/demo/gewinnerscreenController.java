@@ -7,14 +7,25 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import spiellogikPackage.Hauptspiel;
 
+import java.awt.*;
 import java.io.IOException;
 
 public class gewinnerscreenController {
 
+    @FXML
+    private Label gewinnerName;
+
+    public void gewinnerAusgeben(){
+        gewinnerName.setText(Hauptspiel.getSpielerListe().get(Hauptspiel.getAnzahlSpieler()).getName());
+    }
+
     // start knopf:
     @FXML
     private void wechselZuspielfeld(ActionEvent event) throws IOException {
+        Hauptspiel.spielStarten();
+
         FXMLLoader loader = new FXMLLoader(getClass().getResource("spielfeld.fxml"));
         Parent root = loader.load();
         Scene scene = new Scene(root);
@@ -39,6 +50,9 @@ public class gewinnerscreenController {
 
     @FXML
     private void wechselstartmenu(ActionEvent event) throws IOException {
+        Hauptspiel.resetSpielerListe();
+
+
         FXMLLoader loader = new FXMLLoader(getClass().getResource("startmenu.fxml"));
         Parent root = loader.load();
         Scene scene = new Scene(root);

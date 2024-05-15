@@ -2,11 +2,17 @@ package com.example.demo;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.stage.Stage;
 import spiellogikPackage.Hauptspiel;
 import spielerPackage.*;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 
@@ -31,10 +37,26 @@ public class spielfeldController {
     @FXML
     private Label sechs;
 
+    @FXML
+    public void wechselZuGewinnerScreen(ActionEvent event) throws IOException {
+
+       // gewinnerscreenController controller = new gewinnerscreenController();
+       // controller.gewinnerAusgeben();
+
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("gewinnerScreen.fxml"));
+        Parent root = loader.load();
+        Scene scene = new Scene(root);
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        stage.setScene(scene);
+        stage.setResizable(false);
+        stage.show();
+    }
+
+
     public void spielStartVorbereiten() throws InterruptedException {
         spielerAmZug.setText(Hauptspiel.spielerAmZug().getName());
         if (Hauptspiel.spielerAmZug() instanceof Computer_Spieler){
-            computerZugAusfuehren();
+            //computerZugAusfuehren();
         }
     }
 
@@ -64,7 +86,7 @@ public class spielfeldController {
         spielfeldAktualisieren();
     }
 
-    public void eingabeAusfuehrungSum() throws InterruptedException {
+    public void eingabeAusfuehrungSum(ActionEvent event) throws InterruptedException, IOException {
 
         if (Hauptspiel.getStack().size() < 2 || Hauptspiel.getRundenAnzahl() < 4){
             error.setVisible(true);
@@ -75,13 +97,18 @@ public class spielfeldController {
         Hauptspiel.summingUp();
         spielfeldAktualisieren();
 
+        if (Hauptspiel.getPlayerWon()){
+            Hauptspiel.setPlayerWon(false);
+            wechselZuGewinnerScreen(event);
+        }
+
         if (Hauptspiel.spielerAmZug() instanceof Computer_Spieler){
-            computerZugAusfuehren();
+            computerZugAusfuehren(event);
         }
     }
 
-    public void computerZugAusfuehren() throws InterruptedException {
-        wait(500);
+    public void computerZugAusfuehren(ActionEvent event) throws InterruptedException, IOException {
+        //wait(50);
         if (Hauptspiel.getAnzahlSpieler() > 2) {
             Hauptspiel.addNumber(Computer_Spieler.zugMachen_Multiplayer());
         }
@@ -91,6 +118,10 @@ public class spielfeldController {
         error.setVisible(false);
         spielfeldAktualisieren();
 
+        if (Hauptspiel.getPlayerWon()){
+            Hauptspiel.setPlayerWon(false);
+            wechselZuGewinnerScreen(event);
+        }
     }
 }
 
