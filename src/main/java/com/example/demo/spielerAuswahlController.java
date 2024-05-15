@@ -40,6 +40,8 @@ public class spielerAuswahlController {
         Scene scene = new Scene(root);
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         stage.setScene(scene);
+        spielfeldController controller = loader.getController();
+        controller.spielerAmZugAnzeigen();
         stage.show();
     }
 

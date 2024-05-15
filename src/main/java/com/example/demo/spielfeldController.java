@@ -6,41 +6,52 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import spiellogikPackage.Hauptspiel;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Objects;
 
 public class spielfeldController {
 
     @FXML
-    private static TextField eingabe;
+    private TextField eingabe;
     @FXML
-    private static Label spielerAmZug;
+    private Label spielerAmZug;
     @FXML
-    private static Label error;
+    private Label error;
     @FXML
-    private static Label eins;
+    private Label eins;
     @FXML
-    private static Label zwei;
+    private Label zwei;
     @FXML
-    private static Label drei;
+    private Label drei;
     @FXML
-    private static Label vier;
+    private Label vier;
     @FXML
-    private static Label fuenf;
+    private Label fuenf;
     @FXML
-    private static Label sechs;
+    private Label sechs;
 
-    public static void spielerAmZugAnzeigen(){
+    public void spielerAmZugAnzeigen(){
         spielerAmZug.setText(Hauptspiel.spielerAmZug().getName());
+    }
+
+    public void felderAktualisieren(){
+        ArrayList<Label> felder = new ArrayList<Label>(Arrays.asList(eins, zwei, drei, vier, fuenf, sechs));
+        for (int i = 0; i < 6; i++){
+            felder.get(i).setText(String.valueOf(Hauptspiel.getStack().get(i)));
+        }
     }
 
     public void eingabeAusfuehren(ActionEvent actionEvent) {
 
         if (eingabe.getText().isEmpty() || String.valueOf(Integer.parseInt(eingabe.getText())).length() != 1 || eingabe.getText().equals("0")){
             error.setVisible(true);
-            error.setText("Bitte gebe eine gültige Zahl ein.");
+            error.setText("Keine gültige Eingabe.");
             return;
         }
+        error.setVisible(false);
         Hauptspiel.addNumber(Integer.parseInt(eingabe.getText()));
+        felderAktualisieren();
     }
 }
 
