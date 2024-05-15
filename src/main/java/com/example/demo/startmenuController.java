@@ -28,6 +28,8 @@ public class startmenuController {
         Scene scene = new Scene(root);
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         stage.setScene(scene);
+        highscoreController controller = loader.getController();
+        controller.startHST();
         stage.show();
     }
 }

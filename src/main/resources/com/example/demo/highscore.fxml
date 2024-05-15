@@ -8,24 +8,24 @@
 
 <AnchorPane prefHeight="800.0" prefWidth="600.0" style="-fx-background-color: #6ed291;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo.highscoreController">
    <children>
-      <Label fx:id="ersterSpielerID" alignment="CENTER" layoutX="77.0" layoutY="197.0" prefWidth="450.0" style="-fx-border-color: black; -fx-border-width: 2; -fx-background-color: white;">
+      <Label fx:id="ersterSpielerID" alignment="CENTER" layoutX="77.0" layoutY="197.0" prefHeight="30.0" prefWidth="450.0" style="-fx-border-color: black; -fx-border-width: 2; -fx-background-color: white;">
          <font>
-            <Font size="20.0" />
+            <Font size="12.0" />
          </font>
       </Label>
-      <Label fx:id="zweiteSpielerID" alignment="CENTER" layoutX="77.0" layoutY="241.0" prefWidth="450.0" style="-fx-border-color: black; -fx-border-width: 2; -fx-background-color: white;">
+      <Label fx:id="zweiteSpielerID" alignment="CENTER" layoutX="77.0" layoutY="241.0" prefHeight="30.0" prefWidth="450.0" style="-fx-border-color: black; -fx-border-width: 2; -fx-background-color: white;">
          <font>
-            <Font size="20.0" />
+            <Font size="12.0" />
          </font>
       </Label>
-      <Label fx:id="dritteSpielerID" alignment="CENTER" layoutX="77.0" layoutY="287.0" prefWidth="450.0" style="-fx-border-color: black; -fx-border-width: 2; -fx-background-color: white;">
+      <Label fx:id="dritteSpielerID" alignment="CENTER" layoutX="77.0" layoutY="287.0" prefHeight="30.0" prefWidth="450.0" style="-fx-border-color: black; -fx-border-width: 2; -fx-background-color: white;">
          <font>
-            <Font size="20.0" />
+            <Font size="12.0" />
          </font>
       </Label>
       <Label layoutX="152.0" layoutY="31.0" text="Highscore Liste">
          <font>
-            <Font size="45.0" />
+            <Font name="Times New Roman" size="45.0" />
          </font>
       </Label>
       <Label layoutX="77.0" layoutY="140.0" text="Top 3">
@@ -60,11 +60,11 @@
       </Label>
       <Label fx:id="gesuchterSpielerID" alignment="CENTER" layoutX="74.0" layoutY="541.0" prefHeight="30.0" prefWidth="490.0" style="-fx-border-color: black; -fx-border-width: 2; -fx-background-color: white;">
          <font>
-            <Font size="10.0" />
+            <Font size="15.0" />
          </font>
       </Label>
-      <Button fx:id="zurückBT" layoutX="275.0" layoutY="706.0" mnemonicParsing="false" onAction="#wechselZuStartmenu" text="zurück" />
-      <Button layoutX="342.0" layoutY="486.0" mnemonicParsing="false" onAction="#onSuchenKlick" style="-fx-border-color: black; -fx-border-width: 2; -fx-background-color: #c8466e;" text="suchen ">
+      <Button fx:id="zurückBT" layoutX="275.0" layoutY="706.0" mnemonicParsing="false" onAction="#wechselZuStartmenu" style="-fx-border-color: black; -fx-border-width: 2; -fx-background-color: #c8466e;" text="zurück" textFill="WHITE" />
+      <Button layoutX="342.0" layoutY="486.0" mnemonicParsing="false" onAction="#onSuchenKlick" style="-fx-border-color: black; -fx-border-width: 2; -fx-background-color: #c8466e;" text="suchen " textFill="WHITE">
          <font>
             <Font size="15.0" />
          </font>
