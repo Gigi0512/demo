@@ -8,6 +8,11 @@
 
 <AnchorPane maxHeight="800" maxWidth="600" minHeight="800" minWidth="600" prefHeight="800.0" prefWidth="600.0" style="-fx-background-color: #6ed291;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo.highscoreController">
    <children>
+      <Label layoutX="79.0" layoutY="490.0" prefHeight="33.0" prefWidth="250.0" style="-fx-background-color: grey;" />
+      <Label layoutX="79.0" layoutY="546.0" prefHeight="30.0" prefWidth="490.0" style="-fx-background-color: grey;" />
+      <Label layoutX="83.0" layoutY="203.0" prefHeight="119.0" prefWidth="450.0" style="-fx-background-color: grey;" />
+      <Label layoutX="344.0" layoutY="484.0" prefHeight="33.0" prefWidth="74.0" style="-fx-background-color: #8e3254;" />
+      <Label layoutX="277.0" layoutY="703.0" prefHeight="33.0" prefWidth="58.0" style="-fx-background-color: #8e3254;" />
       <Label fx:id="ersterSpielerID" alignment="CENTER" layoutX="77.0" layoutY="197.0" prefHeight="30.0" prefWidth="450.0" style="-fx-border-color: black; -fx-border-width: 2; -fx-background-color: white;">
          <font>
             <Font size="12.0" />
@@ -25,27 +30,17 @@
       </Label>
       <Label layoutX="152.0" layoutY="31.0" text="Highscore Liste">
          <font>
-            <Font name="Times New Roman" size="45.0" />
+            <Font name="Times New Roman" size="48.0" />
          </font>
       </Label>
       <Label layoutX="77.0" layoutY="140.0" text="Top 3">
          <font>
-            <Font size="20.0" />
+            <Font name="System Bold" size="20.0" />
          </font>
       </Label>
-      <Label layoutX="56.0" layoutY="199.0" text="1.">
+      <Label layoutX="56.0" layoutY="242.0" text="2.">
          <font>
-            <Font size="20.0" />
-         </font>
-      </Label>
-      <Label layoutX="56.0" layoutY="243.0" text="2.">
-         <font>
-            <Font size="20.0" />
-         </font>
-      </Label>
-      <Label layoutX="56.0" layoutY="289.0" text="3.">
-         <font>
-            <Font size="20.0" />
+            <Font name="Times New Roman" size="24.0" />
          </font>
       </Label>
       <TextField fx:id="spielerSuchenTF" layoutX="75.0" layoutY="486.0" onKeyPressed="#nachSpielerSuchen" prefWidth="250.0" promptText="Name eingeben" style="-fx-border-color: black; -fx-border-width: 2;">
@@ -55,15 +50,28 @@
       </TextField>
       <Label layoutX="75.0" layoutY="436.0" text="Spieler suchen">
          <font>
-            <Font size="25.0" />
+            <Font name="System Bold" size="20.0" />
          </font>
       </Label>
       <Label fx:id="gesuchterSpielerID" alignment="CENTER" layoutX="74.0" layoutY="541.0" prefHeight="30.0" prefWidth="490.0" style="-fx-border-color: black; -fx-border-width: 2; -fx-background-color: white;" />
-      <Button fx:id="zurückBT" layoutX="275.0" layoutY="706.0" mnemonicParsing="false" onAction="#wechselZuStartmenu" style="-fx-border-color: black; -fx-border-width: 2; -fx-background-color: #c8466e;" text="zurück" textFill="WHITE" />
+      <Button fx:id="zurückBT" layoutX="275.0" layoutY="706.0" mnemonicParsing="false" onAction="#wechselZuStartmenu" style="-fx-border-color: black; -fx-border-width: 2; -fx-background-color: #c8466e;" text="zurück" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font></Button>
       <Button layoutX="342.0" layoutY="486.0" mnemonicParsing="false" onAction="#onSuchenKlick" style="-fx-border-color: black; -fx-border-width: 2; -fx-background-color: #c8466e;" text="suchen " textFill="WHITE">
          <font>
-            <Font size="15.0" />
+            <Font name="System Bold" size="15.0" />
          </font>
       </Button>
+      <Label layoutX="56.0" layoutY="201.0" text="1.">
+         <font>
+            <Font name="Times New Roman" size="24.0" />
+         </font>
+      </Label>
+      <Label layoutX="56.0" layoutY="288.0" text="3.">
+         <font>
+            <Font name="Times New Roman" size="24.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>

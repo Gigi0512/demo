@@ -8,9 +8,15 @@
 
 <AnchorPane prefHeight="800.0" prefWidth="600.0" style="-fx-background-color: #6ed291;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo.hilfeController">
     <children>
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="142.0" layoutY="29.0" prefHeight="73.0" prefWidth="327.0" text="Hilfe" textFill="#d0c9c9">
+         <font>
+            <Font name="Arial Bold" size="60.0" />
+         </font>
+      </Label>
+      <Label layoutX="155.0" layoutY="698.0" prefHeight="80.0" prefWidth="300.0" style="-fx-background-color: #8e3254;" />
         <Label alignment="CENTER" contentDisplay="CENTER" layoutX="137.0" layoutY="24.0" prefHeight="73.0" prefWidth="327.0" text="Hilfe" textFill="WHITE">
             <font>
-                <Font size="60.0" />
+                <Font name="Arial Bold" size="60.0" />
             </font>
         </Label>
         <Button alignment="CENTER" contentDisplay="CENTER" layoutX="150.0" layoutY="693.0" minHeight="80.0" mnemonicParsing="false" onAction="#wechselZuStartmenu" prefWidth="300.0" style="-fx-background-color: c8466e; -fx-border-color: black; -fx-border-width: 2;" text="Hauptmenü" textFill="WHITE">
@@ -20,7 +26,7 @@
         </Button>
       <TextArea editable="false" layoutX="36.0" layoutY="120.0" prefHeight="560.0" prefWidth="528.0" text="Willkommen zu Stack 21, einem spannenden und &#10;herausfordernden Spiel für zwei oder mehr Spieler! &#10;Das Ziel ist einfach: Sei der erste Spieler, der durch &#10;geschickte Zahlenwahl den Wert von 21 oder mehr&#10;auf dem Stapel erreicht.&#10;&#10;Spielablauf:&#10;Die Spieler geben reihum entweder eine Zahl &#10;zwischen 1 und 9 ein oder führen eine Aktion aus, &#10;indem sie eine entsprechende Taste drücken.&#10;Eingegebene Zahlen werden auf den Stapel gelegt, &#10;der Platz für maximal 6 Elemente bietet.&#10;Wenn ein Spieler eine Aktion ausführt, &#10;werden die letzten beiden Zahlen vom Stapel entnommen,&#10; addiert und das Ergebnis wird wieder auf den Stapel gelegt.&#10;Das Spiel endet, sobald ein Spieler durch seine Aktion &#10;den Wert von 21 oder mehr auf dem Stapel erreicht.&#10;&#10;Spielregeln:&#10;Jeder Spieler gibt reihum entweder eine Zahl &#10;zwischen 1 und 9 ein oder führt eine Aktion aus, &#10;indem er eine entsprechende Taste drückt.&#10;Der Stapel hat eine maximale Kapazität von 6 Elementen. &#10;Wenn ein Spieler eine weitere Zahl eingibt und der Stapel &#10;bereits voll ist, wird diese Zahl sofort auf den Stapel gelegt.&#10;Spieler dürfen erst ab der 4. Spielrunde eine Aktion ausführen, &#10;indem sie Zahlen addieren. In den ersten 3 Spielrunden &#10;müssen Zahlen eingegeben werden.&#10;Die Aktion zum Addieren ist nur erlaubt, wenn mindestens&#10; zwei Zahlen auf dem Stapel liegen.&#10;Sobald ein Spieler durch seine Aktion den Wert von 21 &#10;oder mehr erreicht, hat er das Spiel gewonnen.&#10;Bereit, das Spiel zu beginnen? Viel Spaß beim Stapeln und &#10;Taktieren, um als Erster die magische Zahl von 21 zu erreichen!">
          <font>
-            <Font size="18.0" />
+            <Font name="Arial" size="17.0" />
          </font>
       </TextArea>
     </children>

@@ -8,9 +8,18 @@
 <?import javafx.scene.text.Font?>
 
 <AnchorPane prefHeight="800.0" prefWidth="600.0" style="-fx-background-color: #6ed291;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo.spielerAuswahlController">
-    <Label alignment="CENTER" contentDisplay="CENTER" layoutX="110.0" layoutY="120.0" text="Spielerauswahl" textFill="WHITE">
+   <Label layoutX="68.0" layoutY="478.0" prefHeight="61.0" prefWidth="300.0" style="-fx-background-color: #8e3254;" />
+   <Label layoutX="70.0" layoutY="550.0" prefHeight="61.0" prefWidth="300.0" style="-fx-background-color: #8e3254;" visible="false" />
+   <Label layoutX="70.0" layoutY="684.0" prefHeight="61.0" prefWidth="300.0" style="-fx-background-color: #8e3254;" />
+   <Label layoutX="68.0" layoutY="350.0" prefHeight="61.0" prefWidth="300.0" style="-fx-background-color: #8e3254;" />
+   <Label alignment="CENTER" contentDisplay="CENTER" layoutX="86.0" layoutY="83.0" text="Spielerauswahl" textFill="#d3cece">
+      <font>
+         <Font name="Arial Bold" size="60.0" />
+      </font>
+   </Label>
+    <Label alignment="CENTER" contentDisplay="CENTER" layoutX="82.0" layoutY="88.0" text="Spielerauswahl" textFill="WHITE">
         <font>
-            <Font size="60.0" />
+            <Font name="Arial Bold" size="60.0" />
         </font>
     </Label>
     <TextField fx:id="nameTextField" layoutX="65.0" layoutY="355.0" onKeyPressed="#hinzufuegenEnter" prefHeight="60.0" prefWidth="300.0" promptText="Name eingeben..." style="-fx-background-color: c8466e; -fx-border-width: 2; -fx-border-color: black;">
@@ -18,14 +27,14 @@
           <Font size="30.0" />
         </font>
     </TextField>
-    <CheckBox fx:id="computerCheck" alignment="CENTER" contentDisplay="BOTTOM" layoutX="473.0" layoutY="368.0" mnemonicParsing="false" textFill="WHITE">
+    <CheckBox fx:id="computerCheck" alignment="CENTER" contentDisplay="BOTTOM" layoutX="473.0" layoutY="368.0" mnemonicParsing="false" style="-fx-background-color: white;" textFill="#fffafa">
         <font>
           <Font size="25.0" />
         </font>
     </CheckBox>
     <Label layoutX="417.0" layoutY="415.0" text="Computer Spieler" textFill="WHITE">
         <font>
-          <Font size="20.0" />
+          <Font name="Arial Bold" size="20.0" />
         </font>
     </Label>
    <Button layoutX="65.0" layoutY="689.0" minHeight="60.0" mnemonicParsing="false" onAction="#wechselZuStartmenu" prefWidth="300.0" style="-fx-background-color: c8466e; -fx-border-color: black; -fx-border-width: 2;" text="Zurück" textFill="WHITE">

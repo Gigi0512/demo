@@ -22,9 +22,12 @@ public class gewinnerScreenController {
 
     @FXML
     private Label gewinnerLabel;
+    @FXML
+    private Label gewinnerLabel1;
 
     public void gewinnerAusgabe(){
         gewinnerLabel.setText(Hauptspiel.getSpielerListe().get(1).getName());
+        gewinnerLabel1.setText(Hauptspiel.getSpielerListe().get(1).getName());
     }
 
     @FXML

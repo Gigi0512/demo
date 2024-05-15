@@ -7,29 +7,37 @@
 
 <AnchorPane prefHeight="800.0" prefWidth="600.0" style="-fx-background-color: #6ed291;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo.gewinnerScreenController">
    <children>
+      <Label layoutX="155.0" layoutY="375.0" prefHeight="80.0" prefWidth="300.0" style="-fx-background-color: #8e3254;" />
+      <Label layoutX="155.0" layoutY="595.0" prefHeight="80.0" prefWidth="300.0" style="-fx-background-color: #8e3254;" />
+      <Label layoutX="155.0" layoutY="484.0" prefHeight="80.0" prefWidth="300.0" style="-fx-background-color: #8e3254;" />
       <Label alignment="CENTER" layoutX="97.0" layoutY="55.0" prefHeight="88.0" prefWidth="406.0" text="Der Sieger ist" textFill="WHITE">
          <font>
-            <Font size="50.0" />
+            <Font name="Times New Roman Italic" size="40.0" />
          </font>
       </Label>
-      <Label fx:id="gewinnerLabel" alignment="CENTER" layoutX="97.0" layoutY="178.0" prefHeight="88.0" prefWidth="406.0" text="name" textFill="WHITE">
+      <Label fx:id="gewinnerLabel1" alignment="CENTER" layoutX="102.0" layoutY="159.0" prefHeight="88.0" prefWidth="406.0" text="name" textFill="#bf9e24">
          <font>
-            <Font size="50.0" />
+            <Font name="Arial Bold" size="96.0" />
+         </font>
+      </Label>
+      <Label fx:id="gewinnerLabel" alignment="CENTER" layoutX="97.0" layoutY="164.0" prefHeight="88.0" prefWidth="406.0" text="name" textFill="#eec627">
+         <font>
+            <Font name="Arial Bold" size="96.0" />
          </font>
       </Label>
       <Button layoutX="150.0" layoutY="380.0" mnemonicParsing="false" onAction="#wechselZuSpielfeld" prefHeight="80.0" prefWidth="300.0" style="-fx-background-color: c8466e; -fx-border-color: black; -fx-border-width: 2;" text="Erneut Spielen" textFill="WHITE">
          <font>
-            <Font size="30.0" />
+            <Font name="System Bold" size="30.0" />
          </font>
       </Button>
       <Button layoutX="150.0" layoutY="489.0" mnemonicParsing="false" onAction="#wechselZuHighscoretabelle" prefHeight="80.0" prefWidth="300.0" style="-fx-background-color: c8466e; -fx-border-color: black; -fx-border-width: 2;" text="Highscore Liste" textFill="WHITE">
          <font>
-            <Font size="30.0" />
+            <Font name="System Bold" size="30.0" />
          </font>
       </Button>
       <Button layoutX="150.0" layoutY="600.0" mnemonicParsing="false" onAction="#wechselZuStartmenu" prefHeight="80.0" prefWidth="300.0" style="-fx-background-color: c8466e; -fx-border-color: black; -fx-border-width: 2;" text="Hauptmenü" textFill="WHITE">
          <font>
-            <Font size="30.0" />
+            <Font name="System Bold" size="30.0" />
          </font>
       </Button>
    </children>
