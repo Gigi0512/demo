@@ -34,26 +34,6 @@ public class spielerAuswahlController {
     @FXML
     private Button spielStarten;
 
-    private void wechselZuSpielfeld(ActionEvent event) throws IOException {
-        wechselZuSpielfeldHandler(event);
-    }
-
-    @FXML
-    private void wechselZuSpielfeld(KeyEvent event) throws IOException {
-        wechselZuSpielfeldHandler(event);
-    }
-
-    private void wechselZuSpielfeldHandler(Event event) throws IOException {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("spielfeld.fxml"));
-        Parent root = loader.load();
-        Scene scene = new Scene(root);
-        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        stage.setScene(scene);
-        spielfeldController controller = loader.getController();
-        controller.spielStartVorbereiten();
-        stage.setResizable(false);
-        stage.show();
-    }
     @FXML
     public void wechselZuStartmenu(ActionEvent event) throws IOException {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("startmenu.fxml"));
@@ -64,6 +44,40 @@ public class spielerAuswahlController {
         stage.setResizable(false);
         stage.show();
     }
+
+    @FXML
+    private void wechselZuSpielfeld(ActionEvent event) throws IOException {
+        wechselZuSpielfeldHandler(event);
+    }
+
+    private void wechselZuSpielfeldenter(KeyEvent event) throws IOException {
+        wechselZuSpielfeldHandler(event);
+    }
+
+    private void wechselZuSpielfeldHandler(KeyEvent event) throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("spielfeld.fxml"));
+        Parent root = loader.load();
+        Scene scene = new Scene(root);
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        stage.setScene(scene);
+        spielfeldController controller = loader.getController();
+        controller.spielStartVorbereiten();
+        stage.setResizable(false);
+        stage.show();
+    }
+    private void wechselZuSpielfeldHandler(ActionEvent event) throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("spielfeld.fxml"));
+        Parent root = loader.load();
+        Scene scene = new Scene(root);
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        stage.setScene(scene);
+        spielfeldController controller = loader.getController();
+        controller.spielStartVorbereiten();
+        stage.setResizable(false);
+        stage.show();
+    }
+
+
 
     @FXML
     private void hinzufuegenEnter(KeyEvent event) throws IOException {
@@ -93,7 +107,7 @@ public class spielerAuswahlController {
             }
 
             if (Hauptspiel.getAnzahlSpieler() == 4) {
-                wechselZuSpielfeld(event);
+                wechselZuSpielfeldHandler(event);
             }
         }}
 
@@ -125,7 +139,7 @@ public class spielerAuswahlController {
             }
 
             if (Hauptspiel.getAnzahlSpieler() == 4) {
-                wechselZuSpielfeld(event);
+               wechselZuSpielfeldHandler(event);
             }
     }
 }

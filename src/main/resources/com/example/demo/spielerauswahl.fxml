@@ -13,7 +13,7 @@
             <Font size="60.0" />
         </font>
     </Label>
-    <TextField fx:id="nameTextField" layoutX="65.0" layoutY="355.0" onAction="#hinzufuegenEnter" prefHeight="60.0" prefWidth="300.0" promptText="Name eingeben..." style="-fx-background-color: c8466e; -fx-border-width: 2; -fx-border-color: black;">
+    <TextField fx:id="nameTextField" layoutX="65.0" layoutY="355.0" onKeyPressed="#hinzufuegenEnter" prefHeight="60.0" prefWidth="300.0" promptText="Name eingeben..." style="-fx-background-color: c8466e; -fx-border-width: 2; -fx-border-color: black;">
         <font>
           <Font size="30.0" />
         </font>
