@@ -16,11 +16,12 @@ import spielerPackage.Echter_Spieler;
 import spielerPackage.Spieler;
 import spiellogikPackage.Hauptspiel;
 
-
 import java.io.IOException;
+import java.util.ArrayList;
 
 public class spielerAuswahlController {
 
+    ArrayList<String> checkDupikate = new ArrayList<String>();
     @FXML
     private TextField nameTextField;
     @FXML
@@ -53,12 +54,13 @@ public class spielerAuswahlController {
     @FXML
     private void spielerHinzufuegen(ActionEvent event) throws IOException {
 
-            if (nameTextField.getText().isEmpty() || nameTextField.getText().length() > 15 ) {
+            if (nameTextField.getText().isEmpty() || nameTextField.getText().length() > 15  || !checkDupikate.contains(nameTextField.getText())){
                 error.setVisible(true);
                 error.setText("Der Name ist ungültig.");
                 return;
             }
             error.setVisible(false);
+            checkDupikate.add(nameTextField.getText());
 
             if (computerCheck.isSelected()) {
                 Spieler computerSpieler = new Computer_Spieler();
@@ -74,6 +76,10 @@ public class spielerAuswahlController {
 
             if (Hauptspiel.getAnzahlSpieler() >= 2) {
                 spielStarten.setDisable(false);
+            }
+
+            if (Hauptspiel.getAnzahlSpieler() == 4) {
+                wechselZuSpielfeld(event);
             }
     }
 }
