@@ -65,6 +65,12 @@ public class spielerAuswahlController {
         controller.spielStartVorbereiten();
         stage.setResizable(false);
         stage.show();
+
+        if (Hauptspiel.spielerAmZug() instanceof Computer_Spieler) {
+            Thread.sleep(3000);
+            controller.spielStartVorbereiten();
+        }
+
     }
 
     @FXML

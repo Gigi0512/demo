@@ -32,13 +32,6 @@ public class Hauptspiel {
             return;
         }
 
-        if (String.valueOf(pNumber).length() != 1){
-            throw new IllegalArgumentException("Gebe eine Zahl von 1-9 an.");
-        }
-        if (stack.size() >= 6){
-            throw new IllegalArgumentException("Du kannst keine Zahl hinzufügen.");
-        }
-
         stack.push(pNumber);
         spielerListe.addFirst(spielerListe.removeLast());
         rundenAnzahl ++;
@@ -49,14 +42,6 @@ public class Hauptspiel {
     }
 
     public static void summingUp(){
-
-        if (rundenAnzahl <= 3){
-            throw new IllegalArgumentException("Addieren ist erst ab der 3. Spielrunde möglich.");
-        }
-
-        if (stack.size() < 2){
-            throw new IllegalArgumentException("Es müssen mindestens 2 Zahlen da sein.");
-        }
 
         stack.push(stack.pop() + stack.pop());
         spielerListe.addFirst(spielerListe.removeLast());
@@ -79,8 +64,9 @@ public class Hauptspiel {
     public static void setPlayerWon(boolean playerWon) {
         Hauptspiel.playerWon = playerWon;
     }
-    public static void resetSpielerListe(){
-        Hauptspiel.spielerListe.clear();
+
+    public static void setSpielerListe(LinkedList<Spieler> spielerListe) {
+        Hauptspiel.spielerListe = spielerListe;
     }
 
     @Override

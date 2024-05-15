@@ -70,9 +70,6 @@ public class spielfeldController {
 
     public void spielStartVorbereiten() throws InterruptedException {
         spielerAmZug.setText(Hauptspiel.spielerAmZug().getName());
-        if (Hauptspiel.spielerAmZug() instanceof Computer_Spieler) {
-            //computerZugAusfuehren();
-        }
     }
 
     public void spielfeldAktualisieren() throws InterruptedException {
