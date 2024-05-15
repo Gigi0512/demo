@@ -16,14 +16,14 @@
    <Label layoutX="259.0" layoutY="92.0" prefHeight="90.0" prefWidth="90.0" style="-fx-background-color: #8e3254#8e3254;" />
    <Label layoutX="437.0" layoutY="92.0" prefHeight="90.0" prefWidth="90.0" style="-fx-background-color: #8e3254#8e3254;" />
    <Label layoutX="76.0" layoutY="92.0" prefHeight="90.0" prefWidth="90.0" style="-fx-background-color: #8e3254#8e3254;" />
-    <Label alignment="CENTER" contentDisplay="CENTER" layoutX="39.0" layoutY="21.0" text="Spieler am Zug:" textFill="WHITE">
+    <Label alignment="CENTER" contentDisplay="CENTER" layoutX="18.0" layoutY="22.0" text="Spieler am Zug:" textFill="WHITE">
         <font>
-            <Font name="Arial Bold" size="40.0" />
+            <Font name="Arial" size="42.0" />
         </font>
     </Label>
-   <Label fx:id="spielerAmZug" alignment="CENTER" contentDisplay="CENTER" layoutX="312.0" layoutY="21.0" prefHeight="50.0" prefWidth="280.0" text="name" textFill="WHITE">
+   <Label fx:id="spielerAmZug" alignment="CENTER" contentDisplay="CENTER" layoutX="322.0" layoutY="22.0" prefHeight="50.0" prefWidth="279.0" text="name" textFill="WHITE">
       <font>
-         <Font name="Arial Bold" size="41.0" />
+         <Font name="Arial" size="41.0" />
       </font>
    </Label>
    <TextField fx:id="eingabe" alignment="CENTER" layoutX="72.0" layoutY="96.0" onKeyPressed="#eingabeAusfuehrenAddEnter" prefHeight="90.0" prefWidth="90.0" promptText="zahl..." style="-fx-background-color: c8466e; -fx-border-color: black; -fx-border-width: 2;">
@@ -31,12 +31,12 @@
          <Font size="25.0" />
       </font>
    </TextField>
-   <Button layoutX="255.0" layoutY="96.0" mnemonicParsing="false" onAction="#eingabeAusfuehrenAdd" prefHeight="90.0" prefWidth="90.0" style="-fx-background-color: c8466e; -fx-border-color: black; -fx-border-width: 2;" text="Add" textFill="WHITE">
+   <Button fx:id="addID" layoutX="255.0" layoutY="96.0" mnemonicParsing="false" onAction="#eingabeAusfuehrenAdd" prefHeight="90.0" prefWidth="90.0" style="-fx-background-color: c8466e; -fx-border-color: black; -fx-border-width: 2;" text="Add" textFill="WHITE">
       <font>
          <Font size="25.0" />
       </font>
    </Button>
-   <Button layoutX="433.0" layoutY="96.0" mnemonicParsing="false" onAction="#eingabeAusfuehrungSum" prefHeight="90.0" prefWidth="90.0" style="-fx-background-color: c8466e; -fx-border-color: black; -fx-border-width: 2;" text="Sum" textFill="WHITE">
+   <Button fx:id="sumID" layoutX="433.0" layoutY="96.0" mnemonicParsing="false" onAction="#eingabeAusfuehrungSum" prefHeight="90.0" prefWidth="90.0" style="-fx-background-color: c8466e; -fx-border-color: black; -fx-border-width: 2;" text="Sum" textFill="WHITE">
       <font>
          <Font size="25.0" />
       </font>

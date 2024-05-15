@@ -26,8 +26,8 @@ public class HSTabelle {
                 if (Objects.equals(fields[0], spieler1)) {
                     fields[1] = String.valueOf(Integer.parseInt(fields[1]) + 1);
                     fields[4] = String.valueOf(Integer.parseInt(fields[4]) + 1);
-                    fields[3] = String.valueOf(Float.parseFloat(fields[2]) != 0 ? Float.parseFloat(fields[1]) / Float.parseFloat(fields[2]) : 1);
-
+                    float result = Float.parseFloat(fields[2]) != 0 ? Float.parseFloat(fields[1]) / Float.parseFloat(fields[2]) : 1;
+                    fields[3] = String.format("%.2f", result);
 
                     String modifiedLine = String.join(";", fields);
                     myWriter.write(modifiedLine);
@@ -66,7 +66,8 @@ public class HSTabelle {
                 if (Objects.equals(fields[0], spieler1)) {
                     fields[2] = String.valueOf(Integer.parseInt(fields[2]) + 1);
                     fields[4] = String.valueOf(0);
-                    fields[3] = String.valueOf(Float.parseFloat(fields[2]) != 0 ? Float.parseFloat(fields[1]) / Float.parseFloat(fields[2]) : 1);
+                    float result = Float.parseFloat(fields[2]) != 0 ? Float.parseFloat(fields[1]) / Float.parseFloat(fields[2]) : 1;
+                    fields[3] = String.format("%.2f", result);
 
 
                     String modifiedLine = String.join(";", fields);

@@ -1,5 +1,6 @@
 package com.example.demo;
 
+import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.event.Event;
 import javafx.fxml.FXML;
@@ -7,6 +8,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.input.KeyCode;
@@ -39,6 +41,10 @@ public class SpielfeldController {
     private Label fuenf;
     @FXML
     private Label sechs;
+    @FXML
+    private Button addID;
+    @FXML
+    private Button sumID;
 
 
     public void wechselZuGewinnerScreenHandler(Event event) throws IOException {
@@ -132,22 +138,39 @@ public class SpielfeldController {
     }
 
     public void computerZugAusfuehrenHandler(Event event) throws IOException {
-        if (Hauptspiel.getAnzahlSpieler() > 2) {
-            Hauptspiel.addNumber(((Computer_Spieler)Hauptspiel.spielerAmZug()).zugMachen_Multiplayer());
-        } else {
-            Hauptspiel.addNumber(((Computer_Spieler)Hauptspiel.spielerAmZug()).zugMachen_1vs1());
-        }
-        error.setVisible(false);
-        spielfeldAktualisieren();
 
-        if (Hauptspiel.getPlayerWon()) {
-            Hauptspiel.setPlayerWon(false);
-            wechselZuGewinnerScreenHandler(event);
-        }
-        if (Hauptspiel.spielerAmZug() instanceof Computer_Spieler) {
-            computerZugAusfuehrenHandler(event);
-        }
+        new Thread(() -> {
+            try {
+                addID.setDisable(true);
+                sumID.setDisable(true);
+                eingabe.setDisable(true);
+                Thread.sleep(2200);
+                Platform.runLater(() -> {
+                    if (Hauptspiel.getAnzahlSpieler() > 2) {
+                        Hauptspiel.addNumber(((Computer_Spieler)Hauptspiel.spielerAmZug()).zugMachen_Multiplayer());
+                    } else {
+                        Hauptspiel.addNumber(((Computer_Spieler)Hauptspiel.spielerAmZug()).zugMachen_1vs1());
+                    }
+                    error.setVisible(false);
+                    spielfeldAktualisieren();
+                    addID.setDisable(false);
+                    sumID.setDisable(false);
+                    eingabe.setDisable(false);
 
+                    try {
+                        if (Hauptspiel.getPlayerWon()) {
+                            Hauptspiel.setPlayerWon(false);
+                            wechselZuGewinnerScreenHandler(event);
+                        }
+                        if (Hauptspiel.spielerAmZug() instanceof Computer_Spieler) {
+                        computerZugAusfuehrenHandler(event);
+                    }
+                    }catch (IOException e){}});
+
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }).start();
     }
 }
 

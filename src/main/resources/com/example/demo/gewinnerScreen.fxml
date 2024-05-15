@@ -15,12 +15,12 @@
             <Font name="Times New Roman Italic" size="40.0" />
          </font>
       </Label>
-      <Label fx:id="gewinnerLabel1" alignment="CENTER" layoutX="102.0" layoutY="159.0" prefHeight="88.0" prefWidth="406.0" text="name" textFill="#bf9e24">
+      <Label fx:id="gewinnerLabel1" alignment="CENTER" layoutY="159.0" maxWidth="1.7976931348623157E308" prefHeight="111.0" prefWidth="600.0" text="name" textFill="#bf9e24">
          <font>
             <Font name="Arial Bold" size="96.0" />
          </font>
       </Label>
-      <Label fx:id="gewinnerLabel" alignment="CENTER" layoutX="97.0" layoutY="164.0" prefHeight="88.0" prefWidth="406.0" text="name" textFill="#eec627">
+      <Label fx:id="gewinnerLabel" alignment="CENTER" layoutY="164.0" maxWidth="1.7976931348623157E308" prefHeight="111.0" prefWidth="591.0" text="name" textFill="#eec627">
          <font>
             <Font name="Arial Bold" size="96.0" />
          </font>
