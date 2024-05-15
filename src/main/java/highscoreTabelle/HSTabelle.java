@@ -10,7 +10,7 @@ import java.util.stream.Collectors;
 
 public class HSTabelle {
 
-    public static Path meineHST = Paths.get("tabelle.csv");
+    public static Path meineHST = Paths.get("src/main/resources/tabelle.csv");
 
     public static void addWin(String spieler1) {
         try {

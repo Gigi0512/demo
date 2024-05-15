@@ -48,11 +48,13 @@ public class highscoreController {
         if (event.getCode()== KeyCode.ENTER){
             gesuchterSpielerID.setText(HSTabelle.searchPlayer(spielerSuchenTF.getText()));
             spielerSuchenTF.clear();
-
-
         }
-
     }
+    @FXML
+    private void onSuchenKlick() {
+            gesuchterSpielerID.setText(HSTabelle.searchPlayer(spielerSuchenTF.getText()));
+            spielerSuchenTF.clear();
+        }
 
 }
 
