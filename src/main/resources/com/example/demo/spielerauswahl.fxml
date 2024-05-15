@@ -33,7 +33,7 @@
          <Font size="30.0" />
       </font>
    </Button>
-   <Button fx:id="spielStarten" disable="true" layoutX="65.0" layoutY="555.0" minHeight="60.0" mnemonicParsing="false" onAction="#wechselZuSpielfeld" prefWidth="300.0" style="-fx-background-color: c8466e; -fx-border-color: black; -fx-border-width: 2;" text="Spiel starten" textFill="WHITE">
+   <Button fx:id="spielStarten" disable="true" layoutX="65.0" layoutY="555.0" minHeight="60.0" mnemonicParsing="false" onAction="#wechselZuSpielfeldklick" prefWidth="300.0" style="-fx-background-color: c8466e; -fx-border-color: black; -fx-border-width: 2;" text="Spiel starten" textFill="WHITE">
       <font>
          <Font size="30.0" />
       </font>
