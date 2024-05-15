@@ -6,12 +6,37 @@
 <?import javafx.scene.text.Font?>
 
 <AnchorPane prefHeight="800.0" prefWidth="600.0" style="-fx-background-color: #6ed291;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo.startmenuController">
-   <Label alignment="CENTER" contentDisplay="CENTER" layoutX="131.0" layoutY="119.0" text="Das 21+ Spiel" textFill="WHITE">
+   <Label alignment="CENTER" contentDisplay="CENTER" layoutX="208.0" layoutY="703.0" minHeight="70.0" prefHeight="70.0" prefWidth="200.0" style="-fx-background-color: #8e3254;" textAlignment="CENTER" textFill="WHITE">
       <font>
-         <Font size="60.0" />
+         <Font name="System Bold" size="82.0" />
       </font>
    </Label>
-   <Button id="starten" layoutX="153.0" layoutY="296.0" minHeight="80.0" mnemonicParsing="false" onAction="#wechselZuSpielerauswahl" prefWidth="300.0" style="-fx-background-color: c8466e; -fx-border-color: black; -fx-border-width: 2;" text="Starten" textFill="WHITE">
+   <Label alignment="CENTER" contentDisplay="CENTER" layoutX="158.0" layoutY="516.0" minHeight="80.0" prefHeight="80.0" prefWidth="300.0" style="-fx-background-color: #8e3254;" textAlignment="CENTER" textFill="WHITE">
+      <font>
+         <Font name="System Bold" size="82.0" />
+      </font>
+   </Label>
+   <Label alignment="CENTER" contentDisplay="CENTER" layoutX="158.0" layoutY="404.0" minHeight="80.0" prefHeight="80.0" prefWidth="300.0" style="-fx-background-color: #8e3254;" textAlignment="CENTER" textFill="WHITE">
+      <font>
+         <Font name="System Bold" size="82.0" />
+      </font>
+   </Label>
+   <Label alignment="CENTER" contentDisplay="CENTER" layoutX="158.0" layoutY="291.0" minHeight="80.0" prefHeight="80.0" prefWidth="300.0" style="-fx-background-color: #8e3254;" textAlignment="CENTER" textFill="WHITE">
+      <font>
+         <Font name="System Bold" size="82.0" />
+      </font>
+   </Label>
+   <Label alignment="CENTER" contentDisplay="CENTER" layoutX="180.0" layoutY="105.0" text="21 Plus" textAlignment="CENTER" textFill="#908888">
+      <font>
+         <Font name="System Bold" size="82.0" />
+      </font>
+   </Label>
+   <Label alignment="CENTER" contentDisplay="CENTER" layoutX="177.0" layoutY="113.0" text="21 Plus" textAlignment="CENTER" textFill="WHITE">
+      <font>
+         <Font name="System Bold" size="82.0" />
+      </font>
+   </Label>
+   <Button id="starten" layoutX="153.0" layoutY="296.0" minHeight="80.0" mnemonicParsing="false" onAction="#wechselZuSpielerauswahl" prefHeight="80.0" prefWidth="300.0" style="-fx-background-color: c8466e; -fx-border-color: black; -fx-border-width: 2;" text="Starten" textFill="WHITE">
       <font>
          <Font size="35.0" />
       </font>
@@ -21,12 +46,12 @@
          <Font size="35.0" />
       </font>
    </Button>
-   <Button id="highscoreListe" layoutX="153.0" layoutY="409.0" minHeight="80.0" mnemonicParsing="false" onAction="#wechselZuHighscoretabelle" prefWidth="300.0" style="-fx-background-color: c8466e; -fx-border-color: black; -fx-border-width: 2;" text="Highscore Liste" textFill="WHITE">
+   <Button id="highscoreListe" layoutX="153.0" layoutY="409.0" minHeight="80.0" mnemonicParsing="false" onAction="#wechselZuHighscoretabelle" prefHeight="80.0" prefWidth="300.0" style="-fx-background-color: c8466e; -fx-border-color: black; -fx-border-width: 2;" text="Highscore Liste" textFill="WHITE">
       <font>
          <Font size="35.0" />
       </font>
    </Button>
-   <Button id="hilfe" layoutX="153.0" layoutY="521.0" minHeight="80.0" mnemonicParsing="false" onAction="#wechselZuHilfe" prefWidth="300.0" style="-fx-background-color: c8466e; -fx-border-color: black; -fx-border-width: 2;" text="Hilfe" textFill="WHITE">
+   <Button id="hilfe" layoutX="153.0" layoutY="521.0" minHeight="80.0" mnemonicParsing="false" onAction="#wechselZuHilfe" prefHeight="80.0" prefWidth="300.0" style="-fx-background-color: c8466e; -fx-border-color: black; -fx-border-width: 2;" text="Hilfe" textFill="WHITE">
       <font>
          <Font size="35.0" />
       </font>
