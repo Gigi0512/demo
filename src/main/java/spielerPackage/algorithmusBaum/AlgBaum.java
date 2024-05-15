@@ -72,7 +72,7 @@ public class AlgBaum {
     }
 
     public static int bestimmeDenNaechstenZug(AlgBaumKnoten wurzel) {
-        int besterZug = 99; // Wert wird sicher überschrieben
+        int besterZug = 99; // Wert wird später überschrieben
         double hoechsteGewinnWahrscheinlichkeit = -1;
         for (AlgBaumKnoten kind : wurzel.getKinder()) {
             if (kind.getGewinnWahrscheinlichkeit() > hoechsteGewinnWahrscheinlichkeit) {
