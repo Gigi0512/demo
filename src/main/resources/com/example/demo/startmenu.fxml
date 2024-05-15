@@ -16,7 +16,7 @@
          <Font size="35.0" />
       </font>
    </Button>
-   <Button id="exit" layoutX="203.0" layoutY="708.0" minHeight="60.0" mnemonicParsing="false" prefWidth="200.0" style="-fx-background-color: c8466e; -fx-border-color: black; -fx-border-width: 2;" text="Exit" textFill="WHITE">
+   <Button id="exit" layoutX="203.0" layoutY="708.0" minHeight="60.0" mnemonicParsing="false" onAction="#exit" prefWidth="200.0" style="-fx-background-color: c8466e; -fx-border-color: black; -fx-border-width: 2;" text="Exit" textFill="WHITE">
       <font>
          <Font size="35.0" />
       </font>
