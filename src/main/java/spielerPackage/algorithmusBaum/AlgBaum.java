@@ -1,15 +1,16 @@
 package spielerPackage.algorithmusBaum;
 
-import java.util.Stack;
-
 import spiellogikPackage.Hauptspiel;
 
+import java.util.Stack;
+
 // Algorithmus ab dem 4. Spielzug bei 3 oder mehr Spielern
+
 public class AlgBaum {
 
     public static AlgBaumKnoten baumErstellen(int aktuelleRundenanzahl, int zuege) {
         AlgBaumKnoten wurzel = new AlgBaumKnoten(Hauptspiel.getStack(), 0);
-        kinderHinzufuegen(wurzel, zuege, aktuelleRundenanzahl); //HIER ANZAHL VORAUS-ZÜGE ANGEBEN
+        kinderHinzufuegen(wurzel, zuege, aktuelleRundenanzahl);
         return wurzel;
     }
 
@@ -42,9 +43,8 @@ public class AlgBaum {
 
     public static void setzeGewinnwahrscheinlichkeiten(AlgBaumKnoten aktuellerWurzelKnoten, int spielerAnzahl, int zuege) {
         if (aktuellerWurzelKnoten.getKinder().isEmpty()) {
-            if (istMehrAls20(aktuellerWurzelKnoten)) {
+            if (istMehrAls21(aktuellerWurzelKnoten)) {
                 if ((spielerAnzahl == 3 && zuege == 6) || (spielerAnzahl == 4 && zuege == 8)) {
-                    //Ausgänge für unterschiedliche Spieler ausdenken, Runde vlt. als Spielerattribut
                     aktuellerWurzelKnoten.setGewinnWahrscheinlichkeit(1);
                 } else {
                     aktuellerWurzelKnoten.setGewinnWahrscheinlichkeit(0);
@@ -52,18 +52,17 @@ public class AlgBaum {
             } else {
                 aktuellerWurzelKnoten.setGewinnWahrscheinlichkeit(0.5);
             }
-        } else {
+        } else { // hier Berechnung der restlichen Wahrscheinlichkeiten für jeden Knoten
             double zusammenaddierteGewinnWahrscheinlichkeit = 0.0;
-
             for (AlgBaumKnoten kind : aktuellerWurzelKnoten.getKinder()) {
-                setzeGewinnwahrscheinlichkeiten(kind, spielerAnzahl, zuege - 1);
+                setzeGewinnwahrscheinlichkeiten(kind, spielerAnzahl, zuege - 1); // rekursiver Aufruf
                 zusammenaddierteGewinnWahrscheinlichkeit += kind.getGewinnWahrscheinlichkeit();
             }
             aktuellerWurzelKnoten.setGewinnWahrscheinlichkeit(zusammenaddierteGewinnWahrscheinlichkeit / aktuellerWurzelKnoten.getKinder().size());
         }
     }
 
-    public static boolean istMehrAls20(AlgBaumKnoten aktuellerKnoten) {
+    private static boolean istMehrAls21(AlgBaumKnoten aktuellerKnoten) {
         Stack<Integer> stack = aktuellerKnoten.getStackVonDiesemKnoten();
         if (stack.size() >= 2) {
             int sum = stack.getLast() + stack.get(stack.size() - 2);

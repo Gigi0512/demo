@@ -10,13 +10,13 @@ import java.util.Random;
 public class Computer_Spieler extends Spieler {
 
     public Computer_Spieler(String name) {
-        this.setName(name + " (KI)");
+        this.setName(name + " (C)");
     }
 
-    public  int zugMachen_1vs1() {
+    public int zugMachen_1vs1() {
         int neueZahl = 9;
         if (Hauptspiel.getStack().size() >= 2 && (Hauptspiel.getStack().getLast() + Hauptspiel.getStack().get(Hauptspiel.getStack().size() - 2) >= 21)) {
-            neueZahl = 0;
+            neueZahl = 0; // Addieren, falls dadurch gewonnen wird // 0 symbolisiert Addieren
         } else {
             switch (Hauptspiel.getStack().size()) {
                 case 0, 2, 4:
@@ -35,7 +35,7 @@ public class Computer_Spieler extends Spieler {
         return neueZahl;
     }
 
-    public  int zugMachen_Multiplayer() {
+    public int zugMachen_Multiplayer() {
         int aktuelleRundenanzahl = Hauptspiel.getRundenAnzahl();
         int anzahlSpieler = Hauptspiel.getAnzahlSpieler();
         int neueZahl;
