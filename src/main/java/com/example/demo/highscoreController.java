@@ -32,8 +32,7 @@ public class highscoreController {
     private Label dritteSpielerID;
     @FXML
     private Label gesuchterSpielerID;
-    @FXML
-    private Button zurückBT;
+
 
     @FXML
     private void wechselZuStartmenu(ActionEvent event) throws IOException {
@@ -42,6 +41,7 @@ public class highscoreController {
         Scene scene = new Scene(root);
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         stage.setScene(scene);
+        stage.setResizable(false);
         stage.show();
     }
 

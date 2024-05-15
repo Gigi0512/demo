@@ -42,6 +42,7 @@ public class spielerAuswahlController {
         stage.setScene(scene);
         spielfeldController controller = loader.getController();
         controller.spielerAmZugAnzeigen();
+        stage.setResizable(false);
         stage.show();
     }
 
@@ -52,6 +53,7 @@ public class spielerAuswahlController {
         Scene scene = new Scene(root);
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         stage.setScene(scene);
+        stage.setResizable(false);
         stage.show();
     }
 
