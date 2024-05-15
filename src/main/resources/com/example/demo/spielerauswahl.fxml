@@ -18,7 +18,7 @@
           <Font size="30.0" />
         </font>
     </TextField>
-    <CheckBox alignment="CENTER" contentDisplay="BOTTOM" layoutX="473.0" layoutY="368.0" mnemonicParsing="false" textFill="WHITE">
+    <CheckBox fx:id="computerCheck" alignment="CENTER" contentDisplay="BOTTOM" layoutX="473.0" layoutY="368.0" mnemonicParsing="false" textFill="WHITE">
         <font>
           <Font size="25.0" />
         </font>
@@ -33,10 +33,19 @@
          <Font size="30.0" />
       </font>
    </Button>
-   <Button layoutX="65.0" layoutY="555.0" minHeight="60.0" mnemonicParsing="false" onAction="#wechselZuSpielfeld" prefWidth="300.0" style="-fx-background-color: c8466e; -fx-border-color: black; -fx-border-width: 2;" text="Spiel starten" textFill="WHITE">
+   <Button fx:id="spielStarten" disable="true" layoutX="65.0" layoutY="555.0" minHeight="60.0" mnemonicParsing="false" onAction="#wechselZuSpielfeld" prefWidth="300.0" style="-fx-background-color: c8466e; -fx-border-color: black; -fx-border-width: 2;" text="Spiel starten" textFill="WHITE">
       <font>
          <Font size="30.0" />
       </font>
    </Button>
-   <Button layoutX="160.0" layoutY="466.0" mnemonicParsing="false" onAction="#spielerHinzufuegen" text="Button" />
+   <Button layoutX="65.0" layoutY="483.0" minHeight="60.0" mnemonicParsing="false" onAction="#spielerHinzufuegen" prefWidth="300.0" style="-fx-background-color: c8466e; -fx-border-color: black; -fx-border-width: 2;" text="Spieler hinzufügen" textFill="WHITE">
+      <font>
+         <Font size="30.0" />
+      </font>
+   </Button>
+   <Label fx:id="error" alignment="CENTER" layoutX="65.0" layoutY="433.0" prefHeight="17.0" prefWidth="300.0" textFill="RED">
+      <font>
+         <Font size="18.0" />
+      </font>
+   </Label>
 </AnchorPane>
