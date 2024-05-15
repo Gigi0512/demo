@@ -9,7 +9,11 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.input.KeyCode;
 import javafx.stage.Stage;
+import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyEvent;
+import highscoreTabelle.HSTabelle;
 
 import java.io.IOException;
 
@@ -38,4 +42,18 @@ public class highscoreController {
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         stage.setScene(scene);
         stage.show();
-    }}
+    }
+
+    @FXML
+    private void nachSpielerSuchen(KeyEvent event) throws IOException {
+        if (event.getCode()== KeyCode.ENTER){
+            gesuchterSpielerID.setText(HSTabelle.searchPlayer(spielerSuchenTF.getText()));
+            spielerSuchenTF.clear();
+
+
+        }
+
+    }
+
+}
+
