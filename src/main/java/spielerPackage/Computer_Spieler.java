@@ -40,9 +40,14 @@ public class Computer_Spieler extends Spieler {
         if (aktuelleRundenanzahl <4) {
             neueZahl = (new Random()).nextInt(9) +1;
         }
-        if (Hauptspiel.getAnzahlSpieler()>=2 && Hauptspiel.getStack().getLast() + Hauptspiel.getStack().get(Hauptspiel.getAnzahlSpieler()-2) >=21) {
+
+        if (Hauptspiel.getStack().getLast() + Hauptspiel.getStack().get(Hauptspiel.getAnzahlSpieler()-2) >=21) {
             neueZahl = 0;
-        } else {
+        }
+        else if (Hauptspiel.getStack().size()==6) {
+            neueZahl=0;
+        }
+        else {
             int zuege = anzahlSpieler * 2;
             AlgBaumKnoten wurzel = baumErstellen(aktuelleRundenanzahl, zuege);
             setzeGewinnwahrscheinlichkeiten(wurzel, anzahlSpieler, zuege); ;
