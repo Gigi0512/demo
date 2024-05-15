@@ -17,12 +17,15 @@ public class gewinnerScreenController {
     @FXML
     private Label gewinnerLabel;
 
-  //  public void gewinnerAusgabe(){
- //       gewinnerLabel.setText(Hauptspiel.getSpielerListe().getLast().getName());
-   // }
+    public void gewinnerAusgabe(){
+        gewinnerLabel.setText(Hauptspiel.getSpielerListe().get(1).getName());
+    }
 
     @FXML
     private void wechselZuStartmenu(ActionEvent event) throws IOException {
+        Hauptspiel.getSpielerListe().clear();
+        Hauptspiel.getStack().clear();
+
         FXMLLoader loader = new FXMLLoader(getClass().getResource("startmenu.fxml"));
         Parent root = loader.load();
         Scene scene = new Scene(root);
@@ -60,4 +63,10 @@ public class gewinnerScreenController {
         stage.setResizable(false);
         stage.show();
     }
+
+    private void highscoreTabelleBefuellen(){
+
+    }
+
+
 }

@@ -45,11 +45,10 @@ public class spielfeldController {
         Scene scene = new Scene(root);
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         stage.setScene(scene);
+
+        gewinnerScreenController controller = loader.getController();
+        controller.gewinnerAusgabe();
         stage.setResizable(false);
-
-      //  gewinnerScreenController controller = new gewinnerScreenController();
-      //  controller.gewinnerAusgabe();
-
         stage.show();
     }
 
@@ -75,7 +74,7 @@ public class spielfeldController {
         System.out.println(Hauptspiel.getSpielerListe().getFirst().getName());
     }
 
-    public void eingabeAusfuehrenAdd() throws InterruptedException {
+    public void eingabeAusfuehrenAdd(ActionEvent event) throws InterruptedException, IOException {
 
         if (eingabe.getText().isEmpty() || String.valueOf(Integer.parseInt(eingabe.getText())).length() != 1 || eingabe.getText().equals("0")){
             error.setVisible(true);
@@ -85,6 +84,10 @@ public class spielfeldController {
         error.setVisible(false);
         Hauptspiel.addNumber(Integer.parseInt(eingabe.getText()));
         spielfeldAktualisieren();
+
+        if (Hauptspiel.spielerAmZug() instanceof Computer_Spieler){
+            computerZugAusfuehren(event);
+        }
     }
 
     public void eingabeAusfuehrungSum(ActionEvent event) throws InterruptedException, IOException {
@@ -109,7 +112,7 @@ public class spielfeldController {
     }
 
     public void computerZugAusfuehren(ActionEvent event) throws InterruptedException, IOException {
-        //wait(50);
+
         if (Hauptspiel.getAnzahlSpieler() > 2) {
             Hauptspiel.addNumber(Computer_Spieler.zugMachen_Multiplayer());
         }
