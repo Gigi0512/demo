@@ -27,14 +27,16 @@ public class Hauptspiel {
 
     public static void addNumber(int pNumber){
 
-        if (stack.size() == 6){
-            throw new IllegalArgumentException();
-        }
-
         if (pNumber == 0) {
             summingUp();
             return;
         }
+
+        if (stack.size() == 6){
+            throw new IllegalArgumentException();
+        }
+
+
         stack.push(pNumber);
         spielerListe.addFirst(spielerListe.removeLast());
         rundenAnzahl ++;
