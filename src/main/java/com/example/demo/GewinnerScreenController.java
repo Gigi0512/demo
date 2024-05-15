@@ -77,7 +77,8 @@ public class GewinnerScreenController {
     }
 
     private void highscoreTabelleBefuellen(){
-
+        //ruft für den gewinner (immer an der 2. Stelle derListe) die addWin Methode auf falls er Instanceof Echter Spieler ist.
+        //erstelle Stream für die Liste und ruft für alle EchtenSpieler die nicht Gewinner sind die Methode addLose auf
         Spieler zweiterSpieler = Hauptspiel.getSpielerListe().get(1);
         if (zweiterSpieler instanceof Echter_Spieler) {
             HSTabelle.addWin(zweiterSpieler.getName());

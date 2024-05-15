@@ -83,6 +83,8 @@ public class SpielerAuswahlController {
 
     private void spielerHinzufuegen(Event event) throws IOException {
 
+        //überprüft ob der spielername ein gültiger Wert ist und speichert ihn in einer ArrayList zur vermeidung von Duplikaten
+
         if (nameTextField.getText().isEmpty() || nameTextField.getText().length() > 15 || checkDuplikate.contains(nameTextField.getText().toLowerCase()) || nameTextField.getText().contains(";")){
             error.setVisible(true);
             error.setText("Der Name ist ungültig.");
@@ -91,13 +93,13 @@ public class SpielerAuswahlController {
             error.setVisible(false);
             checkDuplikate.add(nameTextField.getText().toLowerCase());}
 
-        if (computerCheck.isSelected()) {
+        if (computerCheck.isSelected()) {//erstellt Computer spieler wenn Box ausgewählt ist
             Spieler computerSpieler = new Computer_Spieler(nameTextField.getText());
             Hauptspiel.spielerHinzufuegen(computerSpieler);
             nameTextField.clear();
             computerCheck.setSelected(false);
         }
-        else {
+        else {//ansonten Erstellung Echter spieler
             Spieler spieler = new Echter_Spieler(nameTextField.getText().toLowerCase());
             Hauptspiel.spielerHinzufuegen(spieler);
             nameTextField.clear();

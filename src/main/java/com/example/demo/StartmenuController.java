@@ -12,6 +12,8 @@ import java.io.IOException;
 
 public class StartmenuController {
 
+    //Lädt Szene je nach angeklicktem Button
+
     @FXML
     private void wechselZuHilfe(ActionEvent event) throws IOException {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("hilfe.fxml"));

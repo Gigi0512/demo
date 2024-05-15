@@ -7,10 +7,10 @@ import java.util.Objects;
 import java.util.stream.Collectors;
 
 public class HSTabelle {
-
+//Festlegen des Dateipfades
     public static Path meineHST = Paths.get("src/main/resources/tabelle.csv");
 
-    public static void addWin(String spieler1) {
+    public static void addWin(String spieler1) {//Sucht  mitgegebenen namen und bearbeitet die Werte
         try {
             Path tempFile = Files.createTempFile(null, null);
             BufferedReader myReader = Files.newBufferedReader(meineHST);
@@ -49,7 +49,7 @@ public class HSTabelle {
     }
 
 
-    public static void addLose(String spieler1) {
+    public static void addLose(String spieler1) {//Sucht  mitgegebenen namen und bearbeitet die Werte
         try {
             Path tempFile = Files.createTempFile(null, null);
             BufferedReader myReader = Files.newBufferedReader(meineHST);
@@ -90,7 +90,7 @@ public class HSTabelle {
         }
     }
 
-    public static void addPlayer(String spieler1) {
+    public static void addPlayer(String spieler1) {//legt neue Zeile an falls mitgegebener Name nicht in der csv vorhanden ist
         try {
             BufferedWriter meinWriter = Files.newBufferedWriter(meineHST, StandardOpenOption.APPEND);
             meinWriter.write(spieler1.toLowerCase() + ";0;0;0;0");
@@ -101,7 +101,7 @@ public class HSTabelle {
         }
     }
 
-    public static String searchPlayer(String spieler1) {
+    public static String searchPlayer(String spieler1) {//sucht spieler in der datei und gibt seine Daten als String aus
         try {
             BufferedReader myReader = Files.newBufferedReader(meineHST);
 
@@ -124,7 +124,7 @@ public class HSTabelle {
         return null;
     }
 
-    public static List<String> getTopThreePlayers() throws IOException {
+    public static List<String> getTopThreePlayers() throws IOException {//erhält mit einem Stream eine Liste mit den 3 namen mit den meisten wins
         try (BufferedReader reader = Files.newBufferedReader(meineHST)) {
             return reader.lines()
                     .map(line -> line.split(";"))
@@ -136,7 +136,7 @@ public class HSTabelle {
         }
     }
 
-    public static String playerOne() {
+    public static String playerOne() {//ruft den spieler mit den meisten siegen auf
         try {
             BufferedReader myReader = Files.newBufferedReader(meineHST);
 
