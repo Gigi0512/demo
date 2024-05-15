@@ -75,6 +75,9 @@ public class Hauptspiel {
         }
     }
 
+    public static LinkedList<Spieler> getSpielerListe() {
+        return spielerListe;
+    }
     public static Spieler spielerAmZug(){
         return spielerListe.peek();
     }
