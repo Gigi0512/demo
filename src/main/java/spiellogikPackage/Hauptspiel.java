@@ -31,7 +31,6 @@ public class Hauptspiel {
             summingUp();
             return;
         }
-
         stack.push(pNumber);
         spielerListe.addFirst(spielerListe.removeLast());
         rundenAnzahl ++;
