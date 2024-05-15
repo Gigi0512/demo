@@ -47,6 +47,7 @@ public class gewinnerScreenController {
     private void wechselZuHighscoretabelle(ActionEvent event) throws IOException {
         highscoreTabelleBefuellen();
         Hauptspiel.getSpielerListe().clear();
+        Hauptspiel.getStack().clear();
 
         FXMLLoader loader = new FXMLLoader(getClass().getResource("highscore.fxml"));
         Parent root = loader.load();
