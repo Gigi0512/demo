@@ -17,7 +17,7 @@
          <Font size="40.0" />
       </font>
    </Label>
-   <TextField fx:id="eingabe" layoutX="72.0" layoutY="96.0" prefHeight="90.0" prefWidth="90.0" promptText="zahl..." style="-fx-background-color: c8466e; -fx-border-color: black; -fx-border-width: 2;">
+   <TextField fx:id="eingabe" layoutX="72.0" layoutY="96.0" onKeyPressed="#eingabeAusfuehrenAddenter" prefHeight="90.0" prefWidth="90.0" promptText="zahl..." style="-fx-background-color: c8466e; -fx-border-color: black; -fx-border-width: 2;">
       <font>
          <Font size="25.0" />
       </font>
