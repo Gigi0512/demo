@@ -28,7 +28,7 @@ public class Hauptspiel {
 
     public static void addNumber(int pNumber){
 
-        if (pNumber == 0 || spielerListe.peek() instanceof Computer_Spieler) {
+        if (pNumber == 0) {
             summingUp();
             return;
         }

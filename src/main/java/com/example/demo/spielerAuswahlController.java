@@ -32,7 +32,7 @@ public class spielerAuswahlController {
     private Button spielStarten;
 
     @FXML
-    private void wechselZuSpielfeld(ActionEvent event) throws IOException {
+    private void wechselZuSpielfeld(ActionEvent event) throws IOException, InterruptedException {
         Hauptspiel.spielStarten();
 
         FXMLLoader loader = new FXMLLoader(getClass().getResource("spielfeld.fxml"));
@@ -58,7 +58,7 @@ public class spielerAuswahlController {
     }
 
     @FXML
-    private void spielerHinzufuegen(ActionEvent event) throws IOException {
+    private void spielerHinzufuegen(ActionEvent event) throws IOException, InterruptedException {
 
             if (nameTextField.getText().isEmpty() || nameTextField.getText().length() > 15 || checkDuplikate.contains(nameTextField.getText()) || nameTextField.getText().contains(";")){
                 error.setVisible(true);

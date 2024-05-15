@@ -31,12 +31,15 @@ public class spielfeldController {
     @FXML
     private Label sechs;
 
-    public void spielStartVorbereiten(){
+    public void spielStartVorbereiten() throws InterruptedException {
         spielerAmZug.setText(Hauptspiel.spielerAmZug().getName());
+        if (Hauptspiel.spielerAmZug() instanceof Computer_Spieler){
+            computerZugAusfuehren();
+        }
     }
 
     @FXML
-    public void spielfeldAktualisieren() {
+    public void spielfeldAktualisieren() throws InterruptedException {
         ArrayList<Label> felder = new ArrayList<>(Arrays.asList(eins, zwei, drei, vier, fuenf, sechs));
         for (int i = 0; i < 6; i++) {
             if (i < Hauptspiel.getStack().size()){
@@ -49,7 +52,7 @@ public class spielfeldController {
         System.out.println(Hauptspiel.getSpielerListe().getFirst().getName());
     }
 
-    public void eingabeAusfuehrenAdd() {
+    public void eingabeAusfuehrenAdd() throws InterruptedException {
 
         if (eingabe.getText().isEmpty() || String.valueOf(Integer.parseInt(eingabe.getText())).length() != 1 || eingabe.getText().equals("0")){
             error.setVisible(true);
@@ -61,7 +64,7 @@ public class spielfeldController {
         spielfeldAktualisieren();
     }
 
-    public void eingabeAusfuehrungSum() {
+    public void eingabeAusfuehrungSum() throws InterruptedException {
 
         if (Hauptspiel.getStack().size() < 2 || Hauptspiel.getRundenAnzahl() < 4){
             error.setVisible(true);
@@ -71,14 +74,23 @@ public class spielfeldController {
         error.setVisible(false);
         Hauptspiel.summingUp();
         spielfeldAktualisieren();
+
+        if (Hauptspiel.spielerAmZug() instanceof Computer_Spieler){
+            computerZugAusfuehren();
+        }
     }
 
     public void computerZugAusfuehren() throws InterruptedException {
-        if (Hauptspiel.getAnzahlSpieler() > 2){}
+        wait(500);
+        if (Hauptspiel.getAnzahlSpieler() > 2) {
+            Hauptspiel.addNumber(Computer_Spieler.zugMachen_Multiplayer());
+        }
+        else {
+            Hauptspiel.addNumber(Computer_Spieler.zugMachen_1vs1());
+        }
+        error.setVisible(false);
+        spielfeldAktualisieren();
 
-
-
-        wait(300);
     }
 }
 
