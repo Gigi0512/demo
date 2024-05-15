@@ -6,27 +6,24 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Label;
 import javafx.stage.Stage;
 import spiellogikPackage.Hauptspiel;
 
-import java.awt.*;
 import java.io.IOException;
 
-public class gewinnerscreenController {
+public class gewinnerScreenController {
 
     @FXML
-    private Label gewinnerName;
+    private Label gewinnerLabel;
 
-    public void gewinnerAusgeben(){
-        gewinnerName.setText(Hauptspiel.getSpielerListe().get(Hauptspiel.getAnzahlSpieler()).getName());
+    public void gewinnerAusgabe(){
+        gewinnerLabel.setText(Hauptspiel.getSpielerListe().get(Hauptspiel.getAnzahlSpieler()).getName());
     }
 
-    // start knopf:
     @FXML
-    private void wechselZuspielfeld(ActionEvent event) throws IOException {
-        Hauptspiel.spielStarten();
-
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("spielfeld.fxml"));
+    private void wechselZuStartmenu(ActionEvent event) throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("startmenu.fxml"));
         Parent root = loader.load();
         Scene scene = new Scene(root);
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
@@ -49,15 +46,16 @@ public class gewinnerscreenController {
     }
 
     @FXML
-    private void wechselstartmenu(ActionEvent event) throws IOException {
-        Hauptspiel.resetSpielerListe();
+    private void wechselZuSpielfeld(ActionEvent event) throws IOException, InterruptedException {
+        Hauptspiel.spielStarten();
 
-
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("startmenu.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("spielfeld.fxml"));
         Parent root = loader.load();
         Scene scene = new Scene(root);
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         stage.setScene(scene);
+        spielfeldController controller = loader.getController();
+        controller.spielStartVorbereiten();
         stage.setResizable(false);
         stage.show();
     }

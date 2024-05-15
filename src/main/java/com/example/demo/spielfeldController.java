@@ -40,8 +40,8 @@ public class spielfeldController {
     @FXML
     public void wechselZuGewinnerScreen(ActionEvent event) throws IOException {
 
-       // gewinnerscreenController controller = new gewinnerscreenController();
-       // controller.gewinnerAusgeben();
+        gewinnerScreenController controller = new gewinnerScreenController();
+        controller.gewinnerAusgabe();
 
         FXMLLoader loader = new FXMLLoader(getClass().getResource("gewinnerScreen.fxml"));
         Parent root = loader.load();
