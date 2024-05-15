@@ -19,6 +19,7 @@ import spielerPackage.Echter_Spieler;
 import spielerPackage.Spieler;
 import spiellogikPackage.Hauptspiel;
 
+import javax.swing.text.html.ImageView;
 import java.io.IOException;
 import java.util.ArrayList;
 
