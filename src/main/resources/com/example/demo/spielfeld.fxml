@@ -22,22 +22,17 @@
          <Font size="25.0" />
       </font>
    </TextField>
-   <Button layoutX="255.0" layoutY="96.0" mnemonicParsing="false" onAction="#eingabeAusfuehren" prefHeight="90.0" prefWidth="90.0" style="-fx-background-color: c8466e; -fx-border-color: black; -fx-border-width: 2;" text="Add" textFill="WHITE">
+   <Button layoutX="255.0" layoutY="96.0" mnemonicParsing="false" onAction="#eingabeAusfuehrenAdd" prefHeight="90.0" prefWidth="90.0" style="-fx-background-color: c8466e; -fx-border-color: black; -fx-border-width: 2;" text="Add" textFill="WHITE">
       <font>
          <Font size="25.0" />
       </font>
    </Button>
-   <Button layoutX="433.0" layoutY="96.0" mnemonicParsing="false" prefHeight="90.0" prefWidth="90.0" style="-fx-background-color: c8466e; -fx-border-color: black; -fx-border-width: 2;" text="Sum" textFill="WHITE">
+   <Button layoutX="433.0" layoutY="96.0" mnemonicParsing="false" onAction="#eingabeAusfuehrungSum" prefHeight="90.0" prefWidth="90.0" style="-fx-background-color: c8466e; -fx-border-color: black; -fx-border-width: 2;" text="Sum" textFill="WHITE">
       <font>
          <Font size="25.0" />
       </font>
    </Button>
-   <Label id="error" layoutX="106.0" layoutY="774.0" maxWidth="412.0" prefHeight="20.0" prefWidth="412.0" textFill="#f50000">
-      <font>
-         <Font size="16.0" />
-      </font>
-   </Label>
-   <Label fx:id="error" layoutX="39.0" layoutY="217.0" prefHeight="17.0" prefWidth="163.0" textFill="RED">
+   <Label fx:id="error" layoutX="18.0" layoutY="217.0" prefHeight="23.0" prefWidth="215.0" textFill="RED">
       <font>
          <Font size="18.0" />
       </font>

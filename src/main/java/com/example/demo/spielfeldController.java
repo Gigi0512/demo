@@ -8,7 +8,6 @@ import spiellogikPackage.Hauptspiel;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Objects;
 
 public class spielfeldController {
 
@@ -31,7 +30,7 @@ public class spielfeldController {
     @FXML
     private Label sechs;
 
-    public void spielerAmZugAnzeigen(){
+    public void spielStartVorbereiten(){
         spielerAmZug.setText(Hauptspiel.spielerAmZug().getName());
     }
 
@@ -42,7 +41,7 @@ public class spielfeldController {
         }
     }
 
-    public void eingabeAusfuehren(ActionEvent actionEvent) {
+    public void eingabeAusfuehrenAdd(ActionEvent actionEvent) {
 
         if (eingabe.getText().isEmpty() || String.valueOf(Integer.parseInt(eingabe.getText())).length() != 1 || eingabe.getText().equals("0")){
             error.setVisible(true);
@@ -52,6 +51,20 @@ public class spielfeldController {
         error.setVisible(false);
         Hauptspiel.addNumber(Integer.parseInt(eingabe.getText()));
         felderAktualisieren();
+        spielerAmZug.setText(Hauptspiel.spielerAmZug().getName());
+    }
+
+    public void eingabeAusfuehrungSum(ActionEvent actionEvent) {
+
+        if (Hauptspiel.getStack().size() < 2 || Hauptspiel.getRundenAnzahl() < 4){
+            error.setVisible(true);
+            error.setText("Aufsummieren ist nicht möglich.");
+            return;
+        }
+        error.setVisible(false);
+        Hauptspiel.summingUp();
+        felderAktualisieren();
+        spielerAmZug.setText(Hauptspiel.spielerAmZug().getName());
     }
 }
 
