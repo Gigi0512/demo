@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="800.0" prefWidth="600.0" style="-fx-background-color: #6ed291;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo.highscoreController">
+<AnchorPane maxHeight="800" maxWidth="600" minHeight="800" minWidth="600" prefHeight="800.0" prefWidth="600.0" style="-fx-background-color: #6ed291;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo.highscoreController">
    <children>
       <Label fx:id="ersterSpielerID" alignment="CENTER" layoutX="77.0" layoutY="197.0" prefHeight="30.0" prefWidth="450.0" style="-fx-border-color: black; -fx-border-width: 2; -fx-background-color: white;">
          <font>
@@ -58,11 +58,7 @@
             <Font size="25.0" />
          </font>
       </Label>
-      <Label fx:id="gesuchterSpielerID" alignment="CENTER" layoutX="74.0" layoutY="541.0" prefHeight="30.0" prefWidth="490.0" style="-fx-border-color: black; -fx-border-width: 2; -fx-background-color: white;">
-         <font>
-            <Font size="15.0" />
-         </font>
-      </Label>
+      <Label fx:id="gesuchterSpielerID" alignment="CENTER" layoutX="74.0" layoutY="541.0" prefHeight="30.0" prefWidth="490.0" style="-fx-border-color: black; -fx-border-width: 2; -fx-background-color: white;" />
       <Button fx:id="zurückBT" layoutX="275.0" layoutY="706.0" mnemonicParsing="false" onAction="#wechselZuStartmenu" style="-fx-border-color: black; -fx-border-width: 2; -fx-background-color: #c8466e;" text="zurück" textFill="WHITE" />
       <Button layoutX="342.0" layoutY="486.0" mnemonicParsing="false" onAction="#onSuchenKlick" style="-fx-border-color: black; -fx-border-width: 2; -fx-background-color: #c8466e;" text="suchen " textFill="WHITE">
          <font>

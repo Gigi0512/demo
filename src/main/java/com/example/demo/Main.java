@@ -15,6 +15,7 @@ public class Main extends Application {
         Scene scene = new Scene(fxmlLoader.load(), 600, 800);
         stage.setTitle("21Plus");
         stage.setScene(scene);
+        stage.setResizable(false);
         stage.show();
     }
 
