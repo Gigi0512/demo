@@ -23,7 +23,7 @@ public class highscoreController {
     @FXML
     private TextField spielerSuchenTF;
     @FXML
-    private Label ersterSpielerID;
+    public  Label ersterSpielerID;
     @FXML
     private Label zweiteSpielerID;
     @FXML
@@ -46,15 +46,21 @@ public class highscoreController {
     @FXML
     private void nachSpielerSuchen(KeyEvent event) throws IOException {
         if (event.getCode()== KeyCode.ENTER){
-            gesuchterSpielerID.setText(HSTabelle.searchPlayer(spielerSuchenTF.getText()));
+            gesuchterSpielerID.setText(HSTabelle.searchPlayer(spielerSuchenTF.getText().toLowerCase()));
             spielerSuchenTF.clear();
         }
     }
     @FXML
     private void onSuchenKlick() {
-            gesuchterSpielerID.setText(HSTabelle.searchPlayer(spielerSuchenTF.getText()));
+            gesuchterSpielerID.setText(HSTabelle.searchPlayer(spielerSuchenTF.getText().toLowerCase()));
             spielerSuchenTF.clear();
-        }
+    }
 
+    public void startHST() {
+        ersterSpielerID.setText(HSTabelle.playerOne());
+        zweiteSpielerID.setText(HSTabelle.playerTwo());
+        dritteSpielerID.setText(HSTabelle.playerThree());
+    }
 }
+
 
