@@ -7,8 +7,8 @@ import java.util.Random;
 
 public class Computer_Spieler extends Spieler {
 
-    public Computer_Spieler() {
-        setName("Computer Spieler");
+    public Computer_Spieler(String name) {
+        this.setName(name);
     }
 
     public static int zugMachen_1vs1() {
@@ -16,7 +16,7 @@ public class Computer_Spieler extends Spieler {
         if (Hauptspiel.getAnzahlSpieler()>2 && Hauptspiel.getStack().getLast() + Hauptspiel.getStack().get(Hauptspiel.getAnzahlSpieler()-2) >=21) {
             neueZahl = 0;
         } else {
-            switch (Hauptspiel.getAnzahlSpieler()) {
+            switch (Hauptspiel.getStack().size()) {
                 case 0, 2, 4:
                     neueZahl = 1;
                     break;
