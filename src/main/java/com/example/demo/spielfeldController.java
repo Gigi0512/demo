@@ -8,6 +8,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.stage.Stage;
 import spiellogikPackage.Hauptspiel;
@@ -38,7 +39,7 @@ public class spielfeldController {
     @FXML
     private Label sechs;
 
-    @FXML
+
     public void wechselZuGewinnerScreen(ActionEvent event) throws IOException {
 
         FXMLLoader loader = new FXMLLoader(getClass().getResource("gewinnerScreen.fxml"));
@@ -75,7 +76,7 @@ public class spielfeldController {
         }
     }
 
-    @FXML
+
     public void spielfeldAktualisieren() throws InterruptedException {
         ArrayList<Label> felder = new ArrayList<>(Arrays.asList(eins, zwei, drei, vier, fuenf, sechs));
         for (int i = 0; i < 6; i++) {
@@ -106,8 +107,8 @@ public class spielfeldController {
     }
 
     @FXML
-    public void eingabeAusfuehrenAddenter(KeyEvent event) throws InterruptedException, IOException {
-
+    public void eingabeAusfuehrenAddEnter(KeyEvent event) throws InterruptedException, IOException {
+        if (event.getCode()== KeyCode.ENTER){
         if (eingabe.getText().isEmpty() || String.valueOf(Integer.parseInt(eingabe.getText())).length() != 1 || eingabe.getText().equals("0")){
             error.setVisible(true);
             error.setText("Keine gültige Eingabe.");
@@ -119,7 +120,7 @@ public class spielfeldController {
 
         if (Hauptspiel.spielerAmZug() instanceof Computer_Spieler){
             computerZugAusfuehren(event);
-        }
+        }}
     }
 
     @FXML
