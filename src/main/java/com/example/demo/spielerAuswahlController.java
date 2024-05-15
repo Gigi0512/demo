@@ -94,6 +94,7 @@ public class spielerAuswahlController {
                 computerSpieler.setName(nameTextField.getText());
                 Hauptspiel.spielerHinzufuegen(computerSpieler);
                 nameTextField.clear();
+                computerCheck.setSelected(false);
             }
             else {
                 Spieler spieler = new Echter_Spieler(nameTextField.getText().toLowerCase());
