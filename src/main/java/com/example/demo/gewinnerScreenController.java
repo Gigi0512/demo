@@ -15,6 +15,8 @@ import spiellogikPackage.Hauptspiel;
 
 import java.io.IOException;
 import java.util.LinkedList;
+import java.util.Optional;
+
 import spielerPackage.*;
 
 public class gewinnerScreenController {
@@ -76,24 +78,15 @@ public class gewinnerScreenController {
 
     private void highscoreTabelleBefuellen(){
 
-        LinkedList<Spieler> temp = Hauptspiel.getSpielerListe();
-
-        if (Hauptspiel.getSpielerListe().get(1) instanceof Echter_Spieler) {
-            HSTabelle.addWin(Hauptspiel.getSpielerListe().get(1).getName());
-            Hauptspiel.getSpielerListe().remove(1);
+        Spieler zweiterSpieler = Hauptspiel.getSpielerListe().get(1);
+        if (zweiterSpieler instanceof Echter_Spieler) {
+            String name = zweiterSpieler.getName();
+            HSTabelle.addWin(name);
         }
 
-        for (int i = 0; i < Hauptspiel.getSpielerListe().size(); i++) {
-            if (Hauptspiel.getSpielerListe().get(i) instanceof Computer_Spieler){
-                Hauptspiel.getSpielerListe().remove(i);
-            }
-        }
-
-        for (int i = 0; i < Hauptspiel.getAnzahlSpieler(); i++){
-            HSTabelle.addLose(Hauptspiel.getSpielerListe().get(i).getName());
-        }
-        Hauptspiel.setSpielerListe(temp);
-    }
-
-
-}
+        Hauptspiel.getSpielerListe().stream()
+                .filter(spieler -> spieler instanceof Echter_Spieler)
+                .filter(spieler -> spieler != zweiterSpieler)
+                .map(Spieler::getName)
+                .forEach(HSTabelle::addLose);
+    }}
