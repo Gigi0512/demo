@@ -12,6 +12,7 @@ import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import com.example.demo.*;
 
 public class highscoreController {
 
@@ -27,8 +28,6 @@ public class highscoreController {
     private Label gesuchterSpielerID;
     @FXML
     private Button zurückBT;
-
-
 
     @FXML
     private void wechselZuStartmenu(ActionEvent event) throws IOException {
