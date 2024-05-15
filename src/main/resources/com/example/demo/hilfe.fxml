@@ -6,14 +6,14 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="800.0" prefWidth="600.0" style="-fx-background-color: #6ed291;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo.gewinnScreenController">
+<AnchorPane prefHeight="800.0" prefWidth="600.0" style="-fx-background-color: #6ed291;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo.hilfeController">
     <children>
         <Label alignment="CENTER" contentDisplay="CENTER" layoutX="137.0" layoutY="24.0" prefHeight="73.0" prefWidth="327.0" text="Hilfe" textFill="WHITE">
             <font>
                 <Font size="60.0" />
             </font>
         </Label>
-        <Button alignment="CENTER" contentDisplay="CENTER" layoutX="150.0" layoutY="693.0" minHeight="80.0" mnemonicParsing="false" onAction="#wechselstartmenu" prefWidth="300.0" style="-fx-background-color: c8466e; -fx-border-color: black; -fx-border-width: 2;" text="Hauptmenü" textFill="WHITE">
+        <Button alignment="CENTER" contentDisplay="CENTER" layoutX="150.0" layoutY="693.0" minHeight="80.0" mnemonicParsing="false" onAction="#wechselZuStartmenu" prefWidth="300.0" style="-fx-background-color: c8466e; -fx-border-color: black; -fx-border-width: 2;" text="Hauptmenü" textFill="WHITE">
             <font>
                 <Font size="35.0" />
             </font>

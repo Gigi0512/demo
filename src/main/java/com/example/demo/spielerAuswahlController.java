@@ -87,7 +87,7 @@ public class spielerAuswahlController {
                 return;
             }
             error.setVisible(false);
-            checkDuplikate.add(nameTextField.getText());
+            checkDuplikate.add(nameTextField.getText().toLowerCase());
 
             if (computerCheck.isSelected()) {
                 Spieler computerSpieler = new Computer_Spieler();
@@ -96,7 +96,7 @@ public class spielerAuswahlController {
                 nameTextField.clear();
             }
             else {
-                Spieler spieler = new Echter_Spieler(nameTextField.getText());
+                Spieler spieler = new Echter_Spieler(nameTextField.getText().toLowerCase());
                 Hauptspiel.spielerHinzufuegen(spieler);
                 nameTextField.clear();
             }

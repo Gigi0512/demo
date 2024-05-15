@@ -98,7 +98,7 @@ public class HSTabelle {
             BufferedWriter meinWriter = Files.newBufferedWriter(meineHST, StandardOpenOption.APPEND);
 
             meinWriter.newLine();
-            meinWriter.write("\n" + spieler1 + ";0;0;0;0");
+            meinWriter.write("\n" + spieler1.toLowerCase() + ";0;0;0;0");
             meinWriter.close();
 
         } catch (IOException e) {
