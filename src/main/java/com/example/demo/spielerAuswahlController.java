@@ -1,5 +1,6 @@
 package com.example.demo;
 
+import highscoreTabelle.HSTabelle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -10,6 +11,8 @@ import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyEvent;
 import javafx.stage.Stage;
 import spielerPackage.Computer_Spieler;
 import spielerPackage.Echter_Spieler;
@@ -31,10 +34,16 @@ public class spielerAuswahlController {
     @FXML
     private Button spielStarten;
 
-    @FXML
     private void wechselZuSpielfeld(ActionEvent event) throws IOException {
-        Hauptspiel.spielStarten();
+        wechselZuSpielfeldHandler(event);
+    }
 
+    @FXML
+    private void wechselZuSpielfeld(KeyEvent event) throws IOException {
+        wechselZuSpielfeldHandler(event);
+    }
+
+    private void wechselZuSpielfeldHandler(Event event) throws IOException {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("spielfeld.fxml"));
         Parent root = loader.load();
         Scene scene = new Scene(root);
@@ -45,7 +54,6 @@ public class spielerAuswahlController {
         stage.setResizable(false);
         stage.show();
     }
-
     @FXML
     public void wechselZuStartmenu(ActionEvent event) throws IOException {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("startmenu.fxml"));
@@ -58,7 +66,39 @@ public class spielerAuswahlController {
     }
 
     @FXML
-    private void spielerHinzufuegen(ActionEvent event) throws IOException {
+    private void hinzufuegenEnter(KeyEvent event) throws IOException {
+        if (event.getCode()== KeyCode.ENTER){
+            if (nameTextField.getText().isEmpty() || nameTextField.getText().length() > 15 || checkDuplikate.contains(nameTextField.getText()) || nameTextField.getText().contains(";")){
+                error.setVisible(true);
+                error.setText("Der Name ist ungültig.");
+                return;
+            }
+            error.setVisible(false);
+            checkDuplikate.add(nameTextField.getText());
+
+            if (computerCheck.isSelected()) {
+                Spieler computerSpieler = new Computer_Spieler();
+                computerSpieler.setName(nameTextField.getText());
+                Hauptspiel.spielerHinzufuegen(computerSpieler);
+                nameTextField.clear();
+            }
+            else {
+                Spieler spieler = new Echter_Spieler(nameTextField.getText());
+                Hauptspiel.spielerHinzufuegen(spieler);
+                nameTextField.clear();
+            }
+
+            if (Hauptspiel.getAnzahlSpieler() >= 2) {
+                spielStarten.setDisable(false);
+            }
+
+            if (Hauptspiel.getAnzahlSpieler() == 4) {
+                wechselZuSpielfeld(event);
+            }
+        }}
+
+    @FXML
+    private void spielerHinzufuegenklick(ActionEvent event) throws IOException {
 
             if (nameTextField.getText().isEmpty() || nameTextField.getText().length() > 15 || checkDuplikate.contains(nameTextField.getText()) || nameTextField.getText().contains(";")){
                 error.setVisible(true);

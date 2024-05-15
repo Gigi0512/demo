@@ -13,7 +13,7 @@
             <Font size="60.0" />
         </font>
     </Label>
-    <TextField fx:id="nameTextField" layoutX="65.0" layoutY="355.0" prefHeight="60.0" prefWidth="300.0" promptText="Name eingeben..." style="-fx-background-color: c8466e; -fx-border-width: 2; -fx-border-color: black;">
+    <TextField fx:id="nameTextField" layoutX="65.0" layoutY="355.0" onAction="#hinzufuegenEnter" prefHeight="60.0" prefWidth="300.0" promptText="Name eingeben..." style="-fx-background-color: c8466e; -fx-border-width: 2; -fx-border-color: black;">
         <font>
           <Font size="30.0" />
         </font>
@@ -38,7 +38,7 @@
          <Font size="30.0" />
       </font>
    </Button>
-   <Button layoutX="65.0" layoutY="483.0" minHeight="60.0" mnemonicParsing="false" onAction="#spielerHinzufuegen" prefWidth="300.0" style="-fx-background-color: c8466e; -fx-border-color: black; -fx-border-width: 2;" text="Spieler hinzufügen" textFill="WHITE">
+   <Button layoutX="65.0" layoutY="483.0" minHeight="60.0" mnemonicParsing="false" onAction="#spielerHinzufuegenklick" prefWidth="300.0" style="-fx-background-color: c8466e; -fx-border-color: black; -fx-border-width: 2;" text="Spieler hinzufügen" textFill="WHITE">
       <font>
          <Font size="30.0" />
       </font>
