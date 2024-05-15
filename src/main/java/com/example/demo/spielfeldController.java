@@ -89,7 +89,7 @@ public class spielfeldController {
     @FXML
     public void eingabeAusfuehrenAdd(ActionEvent event) throws InterruptedException, IOException {
 
-        if (eingabe.getText().isEmpty() || String.valueOf(Integer.parseInt(eingabe.getText())).length() != 1 || eingabe.getText().equals("0")) {
+        if (eingabe.getText().isEmpty() || String.valueOf(Integer.parseInt(eingabe.getText())).length() != 1 || eingabe.getText().equals("0") || Hauptspiel.getStack().size() == 6) {
             error.setVisible(true);
             error.setText("Keine gültige Eingabe.");
             return;
@@ -106,7 +106,7 @@ public class spielfeldController {
     @FXML
     public void eingabeAusfuehrenAddEnter(KeyEvent event) throws InterruptedException, IOException {
         if (event.getCode() == KeyCode.ENTER) {
-            if (eingabe.getText().isEmpty() || String.valueOf(Integer.parseInt(eingabe.getText())).length() != 1 || eingabe.getText().equals("0")) {
+            if (eingabe.getText().isEmpty() || String.valueOf(Integer.parseInt(eingabe.getText())).length() != 1 || eingabe.getText().equals("0") || Hauptspiel.getStack().size() == 6) {
                 error.setVisible(true);
                 error.setText("Keine gültige Eingabe.");
                 return;
