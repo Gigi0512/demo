@@ -11,6 +11,11 @@ import java.io.IOException;
 
 public class spielfeldController {
 
+    @FXML
+    private Label spielerAmZug;
+    @FXML
+    private TextField eingabe;
+
 
 
 }

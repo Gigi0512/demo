@@ -21,7 +21,7 @@ import java.util.ArrayList;
 
 public class spielerAuswahlController {
 
-    ArrayList<String> checkDupikate = new ArrayList<String>();
+    ArrayList<String> checkDuplikate = new ArrayList<String>();
     @FXML
     private TextField nameTextField;
     @FXML
@@ -54,13 +54,13 @@ public class spielerAuswahlController {
     @FXML
     private void spielerHinzufuegen(ActionEvent event) throws IOException {
 
-            if (nameTextField.getText().isEmpty() || nameTextField.getText().length() > 15  || !checkDupikate.contains(nameTextField.getText())){
+            if (nameTextField.getText().isEmpty() || nameTextField.getText().length() > 15  || !checkDuplikate.contains(nameTextField.getText())){
                 error.setVisible(true);
                 error.setText("Der Name ist ungültig.");
                 return;
             }
             error.setVisible(false);
-            checkDupikate.add(nameTextField.getText());
+            checkDuplikate.add(nameTextField.getText());
 
             if (computerCheck.isSelected()) {
                 Spieler computerSpieler = new Computer_Spieler();

@@ -6,48 +6,18 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="800.0" prefWidth="600.0" style="-fx-background-color: #6ed291;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo.spielerAuswahlController">
+<AnchorPane prefHeight="800.0" prefWidth="600.0" style="-fx-background-color: #6ed291;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo.spielfeldController">
     <Label alignment="CENTER" contentDisplay="CENTER" layoutX="39.0" layoutY="21.0" text="Spieler am Zug:" textFill="WHITE">
         <font>
             <Font size="40.0" />
         </font>
     </Label>
-   <Label layoutX="399.0" layoutY="21.0" prefHeight="40.0" prefWidth="100.0" text="name" textFill="WHITE">
+   <Label fx:id="spielerAmZug" layoutX="399.0" layoutY="21.0" prefHeight="40.0" prefWidth="100.0" text="name" textFill="WHITE">
       <font>
          <Font size="40.0" />
       </font>
    </Label>
-   <Button layoutX="255.0" layoutY="680.0" minHeight="90.0" mnemonicParsing="false" onAction="#wechselZuStartmenu" prefWidth="90.0" style="-fx-background-color: c86ee6; -fx-border-color: black; -fx-border-width: 2;" textFill="WHITE">
-      <font>
-         <Font size="30.0" />
-      </font>
-   </Button>
-   <Button layoutX="255.0" layoutY="585.0" minHeight="90.0" mnemonicParsing="false" onAction="#wechselZuStartmenu" prefWidth="90.0" style="-fx-background-color: c878e6; -fx-border-color: black; -fx-border-width: 2;" textFill="WHITE">
-      <font>
-         <Font size="30.0" />
-      </font>
-   </Button>
-   <Button layoutX="255.0" layoutY="490.0" minHeight="90.0" mnemonicParsing="false" onAction="#wechselZuStartmenu" prefWidth="90.0" style="-fx-background-color: c882e6; -fx-border-color: black; -fx-border-width: 2;" textFill="WHITE">
-      <font>
-         <Font size="30.0" />
-      </font>
-   </Button>
-   <Button layoutX="255.0" layoutY="395.0" minHeight="90.0" mnemonicParsing="false" onAction="#wechselZuStartmenu" prefWidth="90.0" style="-fx-background-color: c88ce6; -fx-border-color: black; -fx-border-width: 2;" textFill="WHITE">
-      <font>
-         <Font size="30.0" />
-      </font>
-   </Button>
-   <Button layoutX="255.0" layoutY="300.0" minHeight="90.0" mnemonicParsing="false" onAction="#wechselZuStartmenu" prefWidth="90.0" style="-fx-background-color: c896e6; -fx-border-color: black; -fx-border-width: 2;" textFill="WHITE">
-      <font>
-         <Font size="30.0" />
-      </font>
-   </Button>
-   <Button layoutX="255.0" layoutY="205.0" minHeight="90.0" mnemonicParsing="false" onAction="#wechselZuStartmenu" prefWidth="90.0" style="-fx-background-color: c8a0e6; -fx-border-color: black; -fx-border-width: 2;" textFill="WHITE">
-      <font>
-         <Font size="30.0" />
-      </font>
-   </Button>
-   <TextField layoutX="72.0" layoutY="96.0" prefHeight="90.0" prefWidth="90.0" promptText="zahl..." style="-fx-background-color: c8466e; -fx-border-color: black; -fx-border-width: 2;">
+   <TextField fx:id="eingabe" layoutX="72.0" layoutY="96.0" prefHeight="90.0" prefWidth="90.0" promptText="zahl..." style="-fx-background-color: c8466e; -fx-border-color: black; -fx-border-width: 2;">
       <font>
          <Font size="25.0" />
       </font>
@@ -65,6 +35,41 @@
    <Label id="error" layoutX="106.0" layoutY="774.0" maxWidth="412.0" prefHeight="20.0" prefWidth="412.0" textFill="#f50000">
       <font>
          <Font size="16.0" />
+      </font>
+   </Label>
+   <Label fx:id="error" layoutX="39.0" layoutY="217.0" prefHeight="17.0" prefWidth="163.0" textFill="RED">
+      <font>
+         <Font size="18.0" />
+      </font>
+   </Label>
+   <Label fx:id="eins" alignment="CENTER" layoutX="255.0" layoutY="700.0" prefHeight="90.0" prefWidth="90.0" style="-fx-background-color: c86ee6; -fx-border-color: black; -fx-border-width: 2;">
+      <font>
+         <Font size="45.0" />
+      </font>
+   </Label>
+   <Label fx:id="zwei" alignment="CENTER" layoutX="255.0" layoutY="605.0" prefHeight="90.0" prefWidth="90.0" style="-fx-background-color: c878e6; -fx-border-color: black; -fx-border-width: 2;">
+      <font>
+         <Font size="45.0" />
+      </font>
+   </Label>
+   <Label fx:id="drei" alignment="CENTER" layoutX="255.0" layoutY="510.0" prefHeight="90.0" prefWidth="90.0" style="-fx-background-color: c882e6; -fx-border-color: black; -fx-border-width: 2;">
+      <font>
+         <Font size="45.0" />
+      </font>
+   </Label>
+   <Label fx:id="vier" alignment="CENTER" layoutX="255.0" layoutY="415.0" prefHeight="90.0" prefWidth="90.0" style="-fx-background-color: c88ce6; -fx-border-color: black; -fx-border-width: 2;">
+      <font>
+         <Font size="45.0" />
+      </font>
+   </Label>
+   <Label fx:id="fünf" alignment="CENTER" layoutX="255.0" layoutY="320.0" prefHeight="90.0" prefWidth="90.0" style="-fx-background-color: c896e6; -fx-border-color: black; -fx-border-width: 2;">
+      <font>
+         <Font size="45.0" />
+      </font>
+   </Label>
+   <Label fx:id="sechs" alignment="CENTER" layoutX="255.0" layoutY="225.0" prefHeight="90.0" prefWidth="90.0" style="-fx-background-color: c8a0e6; -fx-border-color: black; -fx-border-width: 2;">
+      <font>
+         <Font size="45.0" />
       </font>
    </Label>
 </AnchorPane>
