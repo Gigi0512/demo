@@ -47,8 +47,8 @@ public class spielfeldController {
         stage.setScene(scene);
         stage.setResizable(false);
 
-        gewinnerScreenController controller = new gewinnerScreenController();
-        controller.gewinnerAusgabe();
+      //  gewinnerScreenController controller = new gewinnerScreenController();
+      //  controller.gewinnerAusgabe();
 
         stage.show();
     }

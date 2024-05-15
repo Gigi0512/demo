@@ -17,9 +17,9 @@ public class gewinnerScreenController {
     @FXML
     private Label gewinnerLabel;
 
-    public void gewinnerAusgabe(){
-        gewinnerLabel.setText(Hauptspiel.getSpielerListe().getLast().getName());
-    }
+  //  public void gewinnerAusgabe(){
+ //       gewinnerLabel.setText(Hauptspiel.getSpielerListe().getLast().getName());
+   // }
 
     @FXML
     private void wechselZuStartmenu(ActionEvent event) throws IOException {
@@ -47,6 +47,7 @@ public class gewinnerScreenController {
 
     @FXML
     private void wechselZuSpielfeld(ActionEvent event) throws IOException, InterruptedException {
+        Hauptspiel.getStack().clear();
         Hauptspiel.spielStarten();
 
         FXMLLoader loader = new FXMLLoader(getClass().getResource("spielfeld.fxml"));
