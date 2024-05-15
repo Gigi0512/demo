@@ -66,7 +66,7 @@ public class Hauptspiel {
     }
 
     public static void setSpielerListe(LinkedList<Spieler> spielerListe) {
-        Hauptspiel.spielerListe = spielerListe;
+        spielerListe = spielerListe;
     }
 
     @Override
