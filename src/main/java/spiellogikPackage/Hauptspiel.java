@@ -1,7 +1,6 @@
 package spiellogikPackage;
 
 import spielerPackage.*;
-
 import java.util.*;
 
 public class Hauptspiel {
@@ -17,7 +16,7 @@ public class Hauptspiel {
     public static void spielStarten(){
         Random rand = new Random();
         int start = rand.nextInt(getAnzahlSpieler());
-        spielerListe.set(0, spielerListe.remove(start));
+        Collections.shuffle(spielerListe);
     }
     public static Stack<Integer> getStack() {
         return stack;
