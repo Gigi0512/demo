@@ -80,10 +80,8 @@ public class gewinnerScreenController {
 
         Spieler zweiterSpieler = Hauptspiel.getSpielerListe().get(1);
         if (zweiterSpieler instanceof Echter_Spieler) {
-            String name = zweiterSpieler.getName();
-            HSTabelle.addWin(name);
+            HSTabelle.addWin(zweiterSpieler.getName());
         }
-
         Hauptspiel.getSpielerListe().stream()
                 .filter(spieler -> spieler instanceof Echter_Spieler)
                 .filter(spieler -> spieler != zweiterSpieler)
