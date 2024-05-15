@@ -5,6 +5,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import spiellogikPackage.Hauptspiel;
+import spielerPackage.*;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -48,7 +49,7 @@ public class spielfeldController {
         System.out.println(Hauptspiel.getSpielerListe().getFirst().getName());
     }
 
-    public void eingabeAusfuehrenAdd(ActionEvent actionEvent) {
+    public void eingabeAusfuehrenAdd() {
 
         if (eingabe.getText().isEmpty() || String.valueOf(Integer.parseInt(eingabe.getText())).length() != 1 || eingabe.getText().equals("0")){
             error.setVisible(true);
@@ -60,7 +61,7 @@ public class spielfeldController {
         spielfeldAktualisieren();
     }
 
-    public void eingabeAusfuehrungSum(ActionEvent actionEvent) {
+    public void eingabeAusfuehrungSum() {
 
         if (Hauptspiel.getStack().size() < 2 || Hauptspiel.getRundenAnzahl() < 4){
             error.setVisible(true);
@@ -70,6 +71,14 @@ public class spielfeldController {
         error.setVisible(false);
         Hauptspiel.summingUp();
         spielfeldAktualisieren();
+    }
+
+    public void computerZugAusfuehren() throws InterruptedException {
+        if (Hauptspiel.getAnzahlSpieler() > 2){}
+
+
+
+        wait(300);
     }
 }
 
