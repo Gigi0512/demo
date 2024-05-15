@@ -16,6 +16,7 @@ import spiellogikPackage.Hauptspiel;
 import java.io.IOException;
 import java.util.LinkedList;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 import spielerPackage.*;
 
@@ -87,6 +88,7 @@ public class gewinnerScreenController {
                 .filter(spieler -> spieler instanceof Echter_Spieler)
                 .filter(spieler -> spieler != zweiterSpieler)
                 .map(Spieler::getName)
+                .collect(Collectors.toList())
                 .forEach(HSTabelle::addLose);
     }
 }

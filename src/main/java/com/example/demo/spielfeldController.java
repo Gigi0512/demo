@@ -83,7 +83,6 @@ public class spielfeldController {
         }
         eingabe.clear();
         spielStartVorbereiten();
-        System.out.println(Hauptspiel.getSpielerListe().getFirst().getName());
     }
 
     @FXML
@@ -146,9 +145,9 @@ public class spielfeldController {
     public void computerZugAusfuehren(ActionEvent event) throws InterruptedException, IOException {
 
         if (Hauptspiel.getAnzahlSpieler() > 2) {
-            Hauptspiel.addNumber(Computer_Spieler.zugMachen_Multiplayer());
+            Hauptspiel.addNumber(((Computer_Spieler)Hauptspiel.spielerAmZug()).zugMachen_Multiplayer());
         } else {
-            Hauptspiel.addNumber(Computer_Spieler.zugMachen_1vs1());
+            Hauptspiel.addNumber(((Computer_Spieler)Hauptspiel.spielerAmZug()).zugMachen_1vs1());
         }
         error.setVisible(false);
         spielfeldAktualisieren();
@@ -156,15 +155,18 @@ public class spielfeldController {
         if (Hauptspiel.getPlayerWon()) {
             Hauptspiel.setPlayerWon(false);
             wechselZuGewinnerScreen(event);
+        }
+
+        if (Hauptspiel.spielerAmZug() instanceof Computer_Spieler) {
+            computerZugAusfuehren(event);
         }
     }
 
     public void computerZugAusfuehren(KeyEvent event) throws InterruptedException, IOException {
-
         if (Hauptspiel.getAnzahlSpieler() > 2) {
-            Hauptspiel.addNumber(Computer_Spieler.zugMachen_Multiplayer());
+            Hauptspiel.addNumber(((Computer_Spieler)Hauptspiel.spielerAmZug()).zugMachen_Multiplayer());
         } else {
-            Hauptspiel.addNumber(Computer_Spieler.zugMachen_1vs1());
+            Hauptspiel.addNumber(((Computer_Spieler)Hauptspiel.spielerAmZug()).zugMachen_1vs1());
         }
         error.setVisible(false);
         spielfeldAktualisieren();
@@ -173,6 +175,10 @@ public class spielfeldController {
             Hauptspiel.setPlayerWon(false);
             wechselZuGewinnerScreen(event);
         }
+        if (Hauptspiel.spielerAmZug() instanceof Computer_Spieler) {
+            computerZugAusfuehren(event);
+        }
+
     }
 }
 

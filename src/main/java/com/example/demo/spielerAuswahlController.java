@@ -63,6 +63,10 @@ public class spielerAuswahlController {
         controller.spielStartVorbereiten();
         stage.setResizable(false);
         stage.show();
+
+        if (Hauptspiel.spielerAmZug() instanceof Computer_Spieler) {
+            controller.computerZugAusfuehren(event);
+        }
     }
     private void wechselZuSpielfeld(ActionEvent event) throws IOException, InterruptedException {
         Hauptspiel.spielStarten();
@@ -79,8 +83,7 @@ public class spielerAuswahlController {
         stage.show();
 
         if (Hauptspiel.spielerAmZug() instanceof Computer_Spieler) {
-            Thread.sleep(1000);
-            controller.spielStartVorbereiten();
+            controller.computerZugAusfuehren(event);
         }
 
     }
@@ -89,13 +92,13 @@ public class spielerAuswahlController {
     @FXML
     private void spielerHinzufuegenklick(ActionEvent event) throws IOException, InterruptedException {
 
-            if (nameTextField.getText().isEmpty() || nameTextField.getText().length() > 15 || checkDuplikate.contains(nameTextField.getText()) || nameTextField.getText().contains(";")){
+            if (nameTextField.getText().isEmpty() || nameTextField.getText().length() > 15 || checkDuplikate.contains(nameTextField.getText().toLowerCase()) || nameTextField.getText().contains(";")){
                 error.setVisible(true);
                 error.setText("Der Name ist ungültig.");
                 return;
-            }
+            }else {
             error.setVisible(false);
-            checkDuplikate.add(nameTextField.getText().toLowerCase());
+            checkDuplikate.add(nameTextField.getText().toLowerCase());}
 
             if (computerCheck.isSelected()) {
                 Spieler computerSpieler = new Computer_Spieler(nameTextField.getText());
@@ -120,18 +123,19 @@ public class spielerAuswahlController {
     @FXML
     private void hinzufuegenEnter(KeyEvent event) throws IOException, InterruptedException {
         if (event.getCode()== KeyCode.ENTER){
-            if (nameTextField.getText().isEmpty() || nameTextField.getText().length() > 15 || checkDuplikate.contains(nameTextField.getText()) || nameTextField.getText().contains(";")){
+            if (nameTextField.getText().isEmpty() || nameTextField.getText().length() > 15 || checkDuplikate.contains(nameTextField.getText().toLowerCase()) || nameTextField.getText().contains(";")){
                 error.setVisible(true);
                 error.setText("Der Name ist ungültig.");
                 return;
             }
             error.setVisible(false);
-            checkDuplikate.add(nameTextField.getText());
+            checkDuplikate.add(nameTextField.getText().toLowerCase());
 
             if (computerCheck.isSelected()) {
                 Spieler computerSpieler = new Computer_Spieler(nameTextField.getText());
                 Hauptspiel.spielerHinzufuegen(computerSpieler);
                 nameTextField.clear();
+                computerCheck.setSelected(false);
             }
             else {
                 Spieler spieler = new Echter_Spieler(nameTextField.getText());

@@ -10,10 +10,10 @@ import java.util.Random;
 public class Computer_Spieler extends Spieler {
 
     public Computer_Spieler(String name) {
-        this.setName(name + " (C)");
+        this.setName(name + " (KI)");
     }
 
-    public static int zugMachen_1vs1() {
+    public  int zugMachen_1vs1() {
         int neueZahl = 9;
         if (Hauptspiel.getStack().size() >= 2 && (Hauptspiel.getStack().getLast() + Hauptspiel.getStack().get(Hauptspiel.getStack().size() - 2) >= 21)) {
             neueZahl = 0;
@@ -35,12 +35,13 @@ public class Computer_Spieler extends Spieler {
         return neueZahl;
     }
 
-    public static int zugMachen_Multiplayer() {
+    public  int zugMachen_Multiplayer() {
         int aktuelleRundenanzahl = Hauptspiel.getRundenAnzahl();
         int anzahlSpieler = Hauptspiel.getAnzahlSpieler();
         int neueZahl;
         if (aktuelleRundenanzahl < 4) {
             neueZahl = (new Random()).nextInt(9) + 1;
+            return neueZahl;
         }
         if (Hauptspiel.getStack().size() >= 2 && (Hauptspiel.getStack().getLast() + Hauptspiel.getStack().get(Hauptspiel.getStack().size() - 2) >= 21)) {
             neueZahl = 0;
@@ -50,7 +51,6 @@ public class Computer_Spieler extends Spieler {
             int zuege = anzahlSpieler * 2; // hier kann manuell die Tiefe des Baumes festgelegt werden: Achtung Speicherplatz!
             AlgBaumKnoten wurzel = baumErstellen(aktuelleRundenanzahl, zuege);
             setzeGewinnwahrscheinlichkeiten(wurzel, anzahlSpieler, zuege);
-            ;
             neueZahl = bestimmeDenNaechstenZug(wurzel);
         }
         return neueZahl;
