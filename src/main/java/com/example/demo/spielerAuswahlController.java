@@ -34,7 +34,6 @@ public class spielerAuswahlController {
     @FXML
     private void wechselZuSpielfeld(ActionEvent event) throws IOException {
         Hauptspiel.spielStarten();
-        spielfeldController.spielerAmZugAnzeigen();
 
         FXMLLoader loader = new FXMLLoader(getClass().getResource("spielfeld.fxml"));
         Parent root = loader.load();

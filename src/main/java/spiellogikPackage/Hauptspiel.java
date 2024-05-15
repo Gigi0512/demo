@@ -55,7 +55,6 @@ public class Hauptspiel {
     public static void summingUp(){
 
         if (rundenAnzahl <= 3){
-
             throw new IllegalArgumentException("Addieren ist erst ab der 3. Spielrunde möglich.");
         }
 

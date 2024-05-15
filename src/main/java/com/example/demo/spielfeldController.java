@@ -2,14 +2,11 @@ package com.example.demo;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
-import javafx.scene.layout.AnchorPane;
-import javafx.scene.text.Font;
 import spiellogikPackage.Hauptspiel;
 
-import java.io.IOException;
+import java.util.Objects;
 
 public class spielfeldController {
 
@@ -36,5 +33,14 @@ public class spielfeldController {
         spielerAmZug.setText(Hauptspiel.spielerAmZug().getName());
     }
 
+    public void eingabeAusfuehren(ActionEvent actionEvent) {
+
+        if (eingabe.getText().isEmpty() || String.valueOf(Integer.parseInt(eingabe.getText())).length() != 1 || eingabe.getText().equals("0")){
+            error.setVisible(true);
+            error.setText("Bitte gebe eine gültige Zahl ein.");
+            return;
+        }
+        Hauptspiel.addNumber(Integer.parseInt(eingabe.getText()));
+    }
 }
 

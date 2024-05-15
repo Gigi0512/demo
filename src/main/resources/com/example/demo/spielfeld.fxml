@@ -22,7 +22,7 @@
          <Font size="25.0" />
       </font>
    </TextField>
-   <Button layoutX="255.0" layoutY="96.0" mnemonicParsing="false" prefHeight="90.0" prefWidth="90.0" style="-fx-background-color: c8466e; -fx-border-color: black; -fx-border-width: 2;" text="Add" textFill="WHITE">
+   <Button layoutX="255.0" layoutY="96.0" mnemonicParsing="false" onAction="#eingabeAusfuehren" prefHeight="90.0" prefWidth="90.0" style="-fx-background-color: c8466e; -fx-border-color: black; -fx-border-width: 2;" text="Add" textFill="WHITE">
       <font>
          <Font size="25.0" />
       </font>
