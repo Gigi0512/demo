@@ -34,11 +34,18 @@ public class spielfeldController {
         spielerAmZug.setText(Hauptspiel.spielerAmZug().getName());
     }
 
-    public void felderAktualisieren(){
-        ArrayList<Label> felder = new ArrayList<Label>(Arrays.asList(eins, zwei, drei, vier, fuenf, sechs));
-        for (int i = 0; i < 6; i++){
-            felder.get(i).setText(String.valueOf(Hauptspiel.getStack().get(i)));
+    @FXML
+    public void spielfeldAktualisieren() {
+        ArrayList<Label> felder = new ArrayList<>(Arrays.asList(eins, zwei, drei, vier, fuenf, sechs));
+        for (int i = 0; i < 6; i++) {
+            if (i < Hauptspiel.getStack().size()){
+                felder.get(i).setText(String.valueOf(Hauptspiel.getStack().get(i)));
+            }
+            else {felder.get(i).setText("");}
         }
+        eingabe.clear();
+        spielStartVorbereiten();
+        System.out.println(Hauptspiel.getSpielerListe().getFirst().getName());
     }
 
     public void eingabeAusfuehrenAdd(ActionEvent actionEvent) {
@@ -50,8 +57,7 @@ public class spielfeldController {
         }
         error.setVisible(false);
         Hauptspiel.addNumber(Integer.parseInt(eingabe.getText()));
-        felderAktualisieren();
-        spielerAmZug.setText(Hauptspiel.spielerAmZug().getName());
+        spielfeldAktualisieren();
     }
 
     public void eingabeAusfuehrungSum(ActionEvent actionEvent) {
@@ -63,8 +69,7 @@ public class spielfeldController {
         }
         error.setVisible(false);
         Hauptspiel.summingUp();
-        felderAktualisieren();
-        spielerAmZug.setText(Hauptspiel.spielerAmZug().getName());
+        spielfeldAktualisieren();
     }
 }
 
