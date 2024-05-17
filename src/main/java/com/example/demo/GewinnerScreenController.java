@@ -74,6 +74,10 @@ public class GewinnerScreenController {
         controller.spielStartVorbereiten();
         stage.setResizable(false);
         stage.show();
+
+        if (Hauptspiel.spielerAmZug() instanceof Computer_Spieler) {
+            controller.computerZugAusfuehrenHandler(event);
+        }
     }
 
     private void highscoreTabelleBefuellen(){
